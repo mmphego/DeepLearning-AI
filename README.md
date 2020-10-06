@@ -1,6 +1,6 @@
 # DeepLearning AI
 
-There are 5 Courses in this Specialization offered on Coursera
+There are 5 Courses in this Specialization offered on [Coursera](https://www.coursera.org/specializations/deep-learning)
 
 ## Course 1: Neural Networks and Deep Learning [Completed]
 
