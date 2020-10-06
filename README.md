@@ -108,3 +108,10 @@ You will:
 
 This is the fifth and final course of the Deep Learning Specialization.
 deeplearning.ai is also partnering with the NVIDIA Deep Learning Institute (DLI) in Course 5, Sequence Models, to provide a programming assignment on Machine Translation with deep learning. You will have the opportunity to build a deep learning project with cutting-edge, industry-relevant content.
+
+
+# Useful Resources
+
+- [Machine Learning from Scratch](https://dafriedman97.github.io/mlbook/content/introduction.html)
+- [Deep Learning - Ian Goodfellow, Yoshua Bengio and Aaron Courville (PDF)](https://github.com/janishar/mit-deep-learning-book-pdf), [URL](https://www.deeplearningbook.org/)
+- [Exploring Machine Learning Basics](https://livebook.manning.com/book/exploring-machine-learning-basics/introduction/)
