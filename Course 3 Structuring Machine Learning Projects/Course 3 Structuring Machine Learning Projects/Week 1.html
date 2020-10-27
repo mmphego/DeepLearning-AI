@@ -1,0 +1,666 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Week 1</title><style>
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	text-indent: -1.7em;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, YuMincho, "Yu Mincho", "Hiragino Mincho ProN", "Hiragino Mincho Pro", "Songti TC", "Songti SC", "SimSun", "Nanum Myeongjo", NanumMyeongjo, Batang, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC', 'Noto Sans CJK KR'; }
+
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC', 'Noto Sans Mono CJK KR'; }
+
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, YuMincho, "Yu Mincho", "Hiragino Mincho ProN", "Hiragino Mincho Pro", "Songti TC", "Songti SC", "SimSun", "Nanum Myeongjo", NanumMyeongjo, Batang, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC', 'Noto Sans CJK KR'; }
+
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC', 'Noto Sans Mono CJK KR'; }
+
+.highlight-default {
+}
+.highlight-gray {
+	color: rgb(155,154,151);
+}
+.highlight-brown {
+	color: rgb(100,71,58);
+}
+.highlight-orange {
+	color: rgb(217,115,13);
+}
+.highlight-yellow {
+	color: rgb(223,171,1);
+}
+.highlight-teal {
+	color: rgb(15,123,108);
+}
+.highlight-blue {
+	color: rgb(11,110,153);
+}
+.highlight-purple {
+	color: rgb(105,64,165);
+}
+.highlight-pink {
+	color: rgb(173,26,114);
+}
+.highlight-red {
+	color: rgb(224,62,62);
+}
+.highlight-gray_background {
+	background: rgb(235,236,237);
+}
+.highlight-brown_background {
+	background: rgb(233,229,227);
+}
+.highlight-orange_background {
+	background: rgb(250,235,221);
+}
+.highlight-yellow_background {
+	background: rgb(251,243,219);
+}
+.highlight-teal_background {
+	background: rgb(221,237,234);
+}
+.highlight-blue_background {
+	background: rgb(221,235,241);
+}
+.highlight-purple_background {
+	background: rgb(234,228,242);
+}
+.highlight-pink_background {
+	background: rgb(244,223,235);
+}
+.highlight-red_background {
+	background: rgb(251,228,228);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(55, 53, 47, 0.6);
+	fill: rgba(55, 53, 47, 0.6);
+}
+.block-color-brown {
+	color: rgb(100,71,58);
+	fill: rgb(100,71,58);
+}
+.block-color-orange {
+	color: rgb(217,115,13);
+	fill: rgb(217,115,13);
+}
+.block-color-yellow {
+	color: rgb(223,171,1);
+	fill: rgb(223,171,1);
+}
+.block-color-teal {
+	color: rgb(15,123,108);
+	fill: rgb(15,123,108);
+}
+.block-color-blue {
+	color: rgb(11,110,153);
+	fill: rgb(11,110,153);
+}
+.block-color-purple {
+	color: rgb(105,64,165);
+	fill: rgb(105,64,165);
+}
+.block-color-pink {
+	color: rgb(173,26,114);
+	fill: rgb(173,26,114);
+}
+.block-color-red {
+	color: rgb(224,62,62);
+	fill: rgb(224,62,62);
+}
+.block-color-gray_background {
+	background: rgb(235,236,237);
+}
+.block-color-brown_background {
+	background: rgb(233,229,227);
+}
+.block-color-orange_background {
+	background: rgb(250,235,221);
+}
+.block-color-yellow_background {
+	background: rgb(251,243,219);
+}
+.block-color-teal_background {
+	background: rgb(221,237,234);
+}
+.block-color-blue_background {
+	background: rgb(221,235,241);
+}
+.block-color-purple_background {
+	background: rgb(234,228,242);
+}
+.block-color-pink_background {
+	background: rgb(244,223,235);
+}
+.block-color-red_background {
+	background: rgb(251,228,228);
+}
+.select-value-color-default { background-color: rgba(206,205,202,0.5); }
+.select-value-color-gray { background-color: rgba(155,154,151, 0.4); }
+.select-value-color-brown { background-color: rgba(140,46,0,0.2); }
+.select-value-color-orange { background-color: rgba(245,93,0,0.2); }
+.select-value-color-yellow { background-color: rgba(233,168,0,0.2); }
+.select-value-color-green { background-color: rgba(0,135,107,0.2); }
+.select-value-color-blue { background-color: rgba(0,120,223,0.2); }
+.select-value-color-purple { background-color: rgba(103,36,222,0.2); }
+.select-value-color-pink { background-color: rgba(221,0,129,0.2); }
+.select-value-color-red { background-color: rgba(255,0,26,0.2); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+</style></head><body><article id="11e8b5e0-f596-460d-bea9-df74093ccebc" class="page sans"><header><h1 class="page-title">Week 1</h1><table class="properties"><tbody><tr class="property-row property-row-select"><th><span class="icon property-icon"><svg viewBox="0 0 14 14" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.4);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesSelect"><path d="M7,13 C10.31348,13 13,10.31371 13,7 C13,3.68629 10.31348,1 7,1 C3.68652,1 1,3.68629 1,7 C1,10.31371 3.68652,13 7,13 Z M3.75098,5.32278 C3.64893,5.19142 3.74268,5 3.90869,5 L10.09131,5 C10.25732,5 10.35107,5.19142 10.24902,5.32278 L7.15771,9.29703 C7.07764,9.39998 6.92236,9.39998 6.84229,9.29703 L3.75098,5.32278 Z"></path></svg></span>Class</th><td><span class="selected-value select-value-color-blue">C3W1</span></td></tr><tr class="property-row property-row-created_time"><th><span class="icon property-icon"><svg viewBox="0 0 14 14" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.4);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesCreatedAt"><path d="M6.98643729,14.0000972 C5.19579566,14.0000972 3.40419152,13.3106896 2.04245843,11.9323606 C-0.681017475,9.21200555 -0.680780251,4.76029539 2.04293482,2.04012507 C4.76664406,-0.68004331 9.22427509,-0.68004331 11.9480135,2.04013479 C13.272481,3.36277455 14,5.1330091 14,6.99552762 C14,8.87640182 13.2721894,10.6285043 11.9480135,11.9509302 C10.5679344,13.3105924 8.77756503,14.0000972 6.98643729,14.0000972 Z M10.2705296,7.00913883 L10.2705296,8.46099754 L10.2705296,8.65543362 L10.076181,8.65543362 L8.6543739,8.65543362 L5.72059514,8.65543362 L5.52619796,8.65543362 L5.52619796,8.46099754 L5.52619796,5.52541044 L5.52619796,3.37946773 L5.52619796,3.18502193 L5.72059514,3.18502193 L7.17253164,3.18502193 L7.36692883,3.18502193 L7.36692883,3.37946773 L7.36692883,6.81467358 L10.076181,6.81467358 L10.2705296,6.81467358 L10.2705296,7.00913883 Z M12.1601539,6.99552762 C12.1601539,5.61697497 11.6190112,4.32597154 10.6393933,3.34769528 C8.63253764,1.34336744 5.35197452,1.34061603 3.34153136,3.33944106 C3.33868273,3.34219247 3.33607716,3.34494388 3.33322852,3.34769528 C1.32397148,5.35459953 1.32372842,8.63641682 3.33322852,10.6433794 C5.34295224,12.6504489 8.62968901,12.6504489 10.6393933,10.6433794 C11.6190112,9.66506426 12.1601539,8.37408027 12.1601539,6.99552762 Z"></path></svg></span>Created</th><td><time>@Oct 11, 2020 7:37 AM</time></td></tr><tr class="property-row property-row-file"><th><span class="icon property-icon"><svg viewBox="0 0 14 14" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.4);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesFile"><path d="M5.94578,14 C4.62416,14 3.38248,13.4963 2.44892,12.585 C1.514641,11.6736 1,10.4639 1,9.17405 C1.00086108,7.88562 1.514641,6.67434 2.44892,5.76378 L7.45612,0.985988 C8.80142,-0.327216 11.1777,-0.332396 12.5354,0.992848 C13.9369,2.36163 13.9369,4.58722 12.5354,5.95418 L8.03046,10.2414 C7.16278,11.0877 5.73682,11.0894 4.86024,10.2345 C3.98394,9.37789 3.98394,7.98769 4.86024,7.1327 L6.60422,5.4317 L7.87576,6.67196 L6.13177,8.37297 C6.01668,8.48539 6.00003,8.61545 6.00003,8.68335 C6.00003,8.75083 6.01668,8.88103 6.13177,8.99429 C6.36197,9.21689 6.53749,9.21689 6.76768,8.99429 L11.2707,4.70622 C11.9645,4.03016 11.9645,2.91757 11.2638,2.23311 C10.5843,1.57007 9.40045,1.57007 8.72077,2.23311 L3.71342,7.0109 C3.12602,7.58406 2.79837,8.35435 2.79837,9.17405 C2.79837,9.99459 3.12602,10.7654 3.72045,11.3446 C4.90947,12.5062 6.98195,12.5062 8.17096,11.3446 L10.41911,9.15165 L11.6906,10.3919 L9.4425,12.585 C8.50808,13.4963 7.2664,14 5.94578,14 Z"></path></svg></span>Materials</th><td></td></tr><tr class="property-row property-row-url"><th><span class="icon property-icon"><svg viewBox="0 0 14 14" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.4);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesUrl"><path d="M3.73333,3.86667 L7.46667,3.86667 C8.49613,3.86667 9.33333,4.70387 9.33333,5.73333 C9.33333,6.7628 8.49613,7.6 7.46667,7.6 L6.53333,7.6 C6.01813,7.6 5.6,8.0186 5.6,8.53333 C5.6,9.04807 6.01813,9.46667 6.53333,9.46667 L7.46667,9.46667 C9.5284,9.46667 11.2,7.79507 11.2,5.73333 C11.2,3.6716 9.5284,2 7.46667,2 L3.73333,2 C1.6716,2 0,3.6716 0,5.73333 C0,7.124 0.762067,8.33453 1.88953,8.97713 C1.87553,8.83107 1.86667,8.6836 1.86667,8.53333 C1.86667,7.92013 1.98753,7.33447 2.2036,6.7978 C1.99267,6.4954 1.86667,6.12953 1.86667,5.73333 C1.86667,4.70387 2.70387,3.86667 3.73333,3.86667 Z M12.1095,5.28907 C12.1231,5.4356 12.1333,5.58307 12.1333,5.73333 C12.1333,6.34607 12.0101,6.9294 11.7931,7.46513 C12.0059,7.768 12.1333,8.13573 12.1333,8.53333 C12.1333,9.5628 11.2961,10.4 10.2667,10.4 L6.53333,10.4 C5.50387,10.4 4.66667,9.5628 4.66667,8.53333 C4.66667,7.50387 5.50387,6.66667 6.53333,6.66667 L7.46667,6.66667 C7.98187,6.66667 8.4,6.24807 8.4,5.73333 C8.4,5.2186 7.98187,4.8 7.46667,4.8 L6.53333,4.8 C4.4716,4.8 2.8,6.4716 2.8,8.53333 C2.8,10.59507 4.4716,12.2667 6.53333,12.2667 L10.2667,12.2667 C12.3284,12.2667 14,10.59507 14,8.53333 C14,7.14267 13.2375,5.93167 12.1095,5.28907 Z"></path></svg></span>Property</th><td><a href="https://www.coursera.org/learn/neural-networks-deep-learning/" class="url-value">https://www.coursera.org/learn/neural-networks-deep-learning/</a></td></tr><tr class="property-row property-row-checkbox"><th><span class="icon property-icon"><svg viewBox="0 0 14 14" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.4);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesCheckbox"><path d="M0,3 C0,1.34314 1.34326,0 3,0 L11,0 C12.6567,0 14,1.34314 14,3 L14,11 C14,12.6569 12.6567,14 11,14 L3,14 C1.34326,14 0,12.6569 0,11 L0,3 Z M3,1.5 C2.17139,1.5 1.5,2.17157 1.5,3 L1.5,11 C1.5,11.8284 2.17139,12.5 3,12.5 L11,12.5 C11.8286,12.5 12.5,11.8284 12.5,11 L12.5,3 C12.5,2.17157 11.8286,1.5 11,1.5 L3,1.5 Z M2.83252,6.8161 L3.39893,6.27399 L3.57617,6.10425 L3.92334,5.77216 L4.26904,6.10559 L4.44531,6.27582 L5.58398,7.37402 L9.28271,3.81073 L9.45996,3.64008 L9.80664,3.3056 L10.1538,3.63989 L10.3311,3.81067 L10.8936,4.35303 L11.0708,4.52399 L11.4434,4.88379 L11.0708,5.24353 L10.8936,5.41437 L6.1084,10.0291 L5.93115,10.2 L5.58398,10.5344 L5.23682,10.2 L5.05957,10.0292 L2.83057,7.87946 L2.65283,7.70801 L2.27832,7.34674 L2.6543,6.98694 L2.83252,6.8161 Z"></path></svg></span>Reviewed</th><td><div class="checkbox checkbox-off"></div></td></tr><tr class="property-row property-row-select"><th><span class="icon property-icon"><svg viewBox="0 0 14 14" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.4);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesSelect"><path d="M7,13 C10.31348,13 13,10.31371 13,7 C13,3.68629 10.31348,1 7,1 C3.68652,1 1,3.68629 1,7 C1,10.31371 3.68652,13 7,13 Z M3.75098,5.32278 C3.64893,5.19142 3.74268,5 3.90869,5 L10.09131,5 C10.25732,5 10.35107,5.19142 10.24902,5.32278 L7.15771,9.29703 C7.07764,9.39998 6.92236,9.39998 6.84229,9.29703 L3.75098,5.32278 Z"></path></svg></span>Type</th><td><span class="selected-value select-value-color-yellow">Section</span></td></tr></tbody></table></header><div class="page-body"><h1 id="a9bd2fe8-1610-40d8-9e8c-d0c769b4fe31" class="">Introduction to ML Strategy</h1><h2 id="c97024d3-9777-43b1-9f0b-258f1f161e51" class="">Why ML Strategy</h2><p id="aad43606-c3f9-486d-abbe-5c9825d4a61b" class="">
+</p><figure id="5fcf3f6a-8eee-4c4c-a52c-8508515ef8ed" class="image"><a href="Week%201/Untitled.png"><img style="width:1115px" src="Week%201/Untitled.png"/></a></figure><p id="ee026c79-1d52-424d-a685-edd8d2f1ffff" class="">When trying to improve a deep learning system you often have a lot of things you can try and tweak, the problem is when you poorly choose a solution and end up taking longer to complete your DL system.</p><h2 id="bd8b0d09-e969-406b-9be6-86c7a2e0ec6d" class="">Orthogonalization</h2><p id="0e907c0b-93c5-45a7-ac5b-6a44617788d5" class="">According to Andrew Ng, Orthogonalization is an important aspect in ML. Orthogonalization is a process of converting a set of functions into separate indipendent functions, the process of splitting a problem/system into its distinct components. Thus making it easier to verify an algorithm independently from one another, which reduces development and testing time.</p><p id="1337e6af-c80f-42bd-8998-f548cc900cb6" class="">
+</p><p id="3c3895cf-2b03-47fd-bd4c-21195be1706b" class="">For a supervised learning system to do well, one usually needs to tune the hyperparameters of the system to ensure that the systems is efficiently optimized. Below are the chain of assumptions when building an ML system:</p><p id="8cb5a6f0-3cf7-41c0-aef3-1cdea572a65b" class="">
+</p><ul id="139ff704-da77-48b2-8350-d1ab0432bd69" class="bulleted-list"><li><strong>Firstly, fit training set well on the cost function,</strong> If our model doesn&#x27;t fit training set well we should:<ul id="b468e52f-6aec-48b9-81ae-34446ae8692b" class="bulleted-list"><li>Use a bigger neural network</li></ul><ul id="5bb71205-c975-4293-ae2f-16f183ca5c0e" class="bulleted-list"><li>Use an alternative optimization algorithm</li></ul></li></ul><ul id="f2c4cc07-ec28-41f3-874b-58dea11ee513" class="bulleted-list"><li><strong>Secondly, fit the development set well on the cost function, </strong>if our model doesn&#x27;t fit well we should:<ul id="6aceff32-760e-4054-baff-fdb4ee7dee8d" class="bulleted-list"><li>Implement regularization</li></ul><ul id="7208c131-2103-4d35-b081-5cdf8c69dcf6" class="bulleted-list"><li>Getting a bigger training set.</li></ul></li></ul><ul id="eb89b0f5-f65f-4f77-a7c0-abd6e30927e5" class="bulleted-list"><li><strong>Thirdly, fit test set well on the cost function</strong>, if our model doesn&#x27;t fit well we should:<ul id="af9de76d-9b46-4543-96be-be8672648292" class="bulleted-list"><li>Bigger dev set, as you probably overtuned to your dev set.</li></ul><ul id="71f74cb2-1c7a-45fb-a69b-29d9f1686daf" class="bulleted-list"><li>Check that distribution of the dev set is the same as the test set or the cost function.</li></ul></li></ul><p id="54fe1756-f27d-45d6-ba52-c267ecefbf73" class="">
+</p><p id="6da5d397-a2a4-4e32-b08f-9a3694231c93" class="">When Andrew Ng trains a neural network, he tends not to use <strong>early stopping,</strong> as he find it difficult to tune it in order to affect a single aspect of the system. It simultenously affects how well you fit your training and test set. So early stopping affects orthogonalization and should not be considered.</p><h1 id="f137276a-105e-4749-9280-77493a6467a8" class="">Setting up your goal</h1><h2 id="b3cfad5f-148d-46eb-9fe0-79eeba93743c" class="">Single number evaluation metric</h2><p id="335e8852-2ae7-4d54-9377-82752f6410be" class="">Whether you&#x27;re tuning hyperparameters or trying out different ideas for learning algorithms, you&#x27;ll find that your progress will be much faster if you have a single real number evaluation metric that lets you know quickly if your technique works or not.</p><p id="204ca5c9-f39c-4d65-a4f3-6f564bbd5994" class="">
+</p><p id="9badb5ac-9d4e-4191-8940-9e3352bfe183" class="">One reasonable way to evaluate the perfomance of your classifier is to look  at it&#x27;s <em>precision</em> and <em>recall. </em></p><ul id="0c052b8d-9b1c-4b4f-bf25-68bf0a31d779" class="bulleted-list"><li>An example of precision would be, of the examples that your classifier recognizes correctly, what is the actuall percentage it actually correctly recognized?</li></ul><ul id="78f66fac-e46c-4e31-b2a0-318d7f3b787f" class="bulleted-list"><li>Recall is, of all the images that were correctly classified, what percentage were correctly recognized by your classifier.</li></ul><p id="49f121e8-c15d-4f8c-9a31-48a7950a2550" class="">
+</p><p id="4c1d9875-dde8-45f4-98b2-12113cc9b932" class="">With the 2 evaluation matrics mentioned above, you could instead combine  precision and recall into a matric called <strong>F1 Score, </strong>which is defined by the fomula: <style>@import url('https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.11.1/katex.min.css')</style><span data-token-index="0" contenteditable="false" class="notion-text-equation-token" style="user-select:all;-webkit-user-select:all;-moz-user-select:all"><span></span><span><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>2</mn><mi mathvariant="normal">/</mi><mo stretchy="false">(</mo><mn>1</mn><mi mathvariant="normal">/</mi><mi>p</mi><mo>+</mo><mn>1</mn><mi mathvariant="normal">/</mi><mi>r</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">2/(1/p + 1/r)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">2</span><span class="mord">/</span><span class="mopen">(</span><span class="mord">1</span><span class="mord">/</span><span class="mord mathdefault">p</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">1</span><span class="mord">/</span><span class="mord mathdefault" style="margin-right:0.02778em;">r</span><span class="mclose">)</span></span></span></span></span><span>﻿</span></span></p><p id="afbdc84d-16e8-4fa5-9b4d-e7eae3a31dfa" class="">
+</p><p id="3877021e-1ae2-4011-beb6-12053709d29c" class="">Evaluation metric allows one to tell quickly if classifier A or classifier B is better and therefore having a development training set and signle number metric distance to speed up iterating. This speeds up the iterative process of improving your learning algorithm.</p><h2 id="3b00a09e-915d-4422-9ddd-e8029c794556" class="">Satisficing and Optimizing metric</h2><p id="e683f729-5608-483c-86be-5202cf52f5e6" class="">
+</p><figure id="12e23b30-dd47-4158-87d1-03fc16342f9a" class="image"><a href="Week%201/Untitled%201.png"><img style="width:798px" src="Week%201/Untitled%201.png"/></a></figure><p id="9eae3fbb-587c-46c0-bf5d-5890b37d2a68" class="">Suppose your classifier&#x27;s takes x amount of running time with a specific accuracy evaluations metrics.  The accuracy can be an optimizing metric as one would consider it as a priority as compared to the satisficing metric running time.</p><p id="33c35c61-ef57-4818-a6a1-a4275b2b6194" class="">So, if you have <style>@import url('https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.11.1/katex.min.css')</style><span data-token-index="0" contenteditable="false" class="notion-text-equation-token" style="user-select:all;-webkit-user-select:all;-moz-user-select:all"><span></span><span><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>N</mi></mrow><annotation encoding="application/x-tex">N</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.10903em;">N</span></span></span></span></span><span>﻿</span></span> metrics, 1 should be optimizing and <style>@import url('https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.11.1/katex.min.css')</style><span data-token-index="0" contenteditable="false" class="notion-text-equation-token" style="user-select:all;-webkit-user-select:all;-moz-user-select:all"><span></span><span><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>N</mi><mo>−</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">N-1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.76666em;vertical-align:-0.08333em;"></span><span class="mord mathdefault" style="margin-right:0.10903em;">N</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span></span></span></span></span><span>﻿</span></span> satisficing.</p><p id="a2478a7f-fe1e-4b53-8d30-7daafb552ee9" class="">
+</p><p id="9e7d81d5-eead-43a6-899c-73f3d4a9be76" class="">To summarize, if there are multiple things you care about by say there&#x27;s one as the optimizing metric that you want to do as well as possible on and one or more as satisficing metrics were you&#x27;ll be satisfice. Almost it does better than some threshold you can now have an almost automatic way of quickly looking at multiple core size and picking the best one. Now these evaluation matrix must be evaluated or calculated on a training set or a development set or maybe on the test set. So one of the things you also need to do is set up training, dev or development, as well as test sets. </p><h2 id="0a75e830-df35-47a2-ae28-dcc8a05831a3" class="">Train/Dev/Test Distributions</h2><ul id="7a8788c2-ecdc-44e9-84da-fe1329712656" class="bulleted-list"><li>It is recommended that your dev &amp; test set comes from the same distribution. </li></ul><ul id="3c883d43-0ed1-470e-ad6d-7e975d29869b" class="bulleted-list"><li>A great solution is to randomly select your dev &amp; test set from the distribution.</li></ul><ul id="7f833a1b-31a3-49f7-b87a-d54d0a58a4b5" class="bulleted-list"><li>Choose a dev &amp; test set to reflect data that you expect to get in the future which you consider important to do well on.</li></ul><h2 id="8a3fccf0-3b09-4de6-a956-38e3d9d640bc" class="">Size of the dev and test sets</h2><p id="ff7c7920-6671-4d94-bb2e-f4d05d31f3ac" class="">The rule of thumb is really to try to set the dev set to big enough for its purpose, which helps you evaluate different ideas and pick this up from AOP better. And the purpose of test set is to help you evaluate your final cost buys. You just have to set your test set big enough for that purpose, and that could be much less than 30% of the data. </p><h1 id="ba7dcb2e-08fa-45f1-9ede-aec0b510456d" class="">Comparing to human-level perfomance</h1><h2 id="2b0d265a-4d9c-4001-866f-bf0cdc5d1ade" class="">Why human-level performance?</h2><p id="db914df4-476e-4a52-8a73-924fd74f9912" class="">In the last few years, a lot more machine learning teams have been talking about comparing the machine learning systems to human level performance. There are two main reasons:</p><ul id="6e41330f-4f69-47f8-9dcb-6f8ddc2ffa60" class="bulleted-list"><li>First is that because of advances in deep learning, machine learning algorithms are suddenly working much better and so it has become much more feasible in a lot of application areas for machine learning algorithms to actually become competitive with human-level perfomance.</li></ul><ul id="7211c6a0-49ef-4093-aca3-e36e5e3dcfa8" class="bulleted-list"><li>Second, it turns out that the workflow of designing and building a machine learning system is much more efficient when youre trying to do something that a human can also do.</li></ul><p id="005d459c-8fa0-43ce-9475-3d54b8ae98b8" class="">
+</p><figure id="9fc7ca1c-be09-4e64-ac04-37d85730f453" class="image"><a href="Week%201/Untitled%202.png"><img style="width:800px" src="Week%201/Untitled%202.png"/></a></figure><p id="cf482de8-762c-4607-a113-7f7f392cbc4f" class="">A lot of machine learning tasks progresses terns to be relatively rapid as you approach human level perfomance. But then after a while the algorithm surpusses human-level perfomance and then the progress and accuracy slows down.</p><p id="7c794431-af73-415f-a6c5-0fa4e4cd085f" class="">Over time, as you keep training the algorithm the perfomance approaches but never surpasses some theoretical limit, which is called the <strong>Bayes Optimal Error (</strong>think<strong> </strong>of this as the best possible error).</p><p id="55261be7-8fd6-4711-ac2b-60919b6d8cd3" class="">
+</p><p id="81a64296-a596-4888-b833-e7c0e717ed5d" class="">According to <a href="https://stats.stackexchange.com/a/302910">stackoverflow</a>,</p><blockquote id="b4b9189d-2b6d-4b44-806f-b430a0625aba" class="">Bayes error is the lowest possible prediction error that can be achieved and is the same as irreducible error. If one would know exactly what process generates the data, then errors will still be made if the process is random. This is also what is meant by &quot;y is inherently stochastic&quot;.
+</blockquote><blockquote id="fb529b3e-9057-41f6-8577-a7498e904542" class="">For example, when flipping a fair coin, we know exactly what process generates the outcome (a binomial distribution). However, if we were to predict the outcome of a series of coin flips, we would still make errors, because the process is inherently random (i.e. stochastic).</blockquote><p id="dd73c9d9-99e4-4645-a0ba-e3489ca73691" class="">
+</p><p id="28cd9226-adbd-41a4-9edf-9d347836a9d5" class="">Also read:</p><figure id="8139d6e0-729f-4c3c-8101-f484ed074225"><a href="https://www.linkedin.com/pulse/understanding-bayes-error-how-low-cost-machine-learning-malcolm-mason?articleId=6468081107404492800" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Understanding Bayes Error: How a low cost machine learning strategy could have a big impact</div><div class="bookmark-description">Summary Machine learning typically outperforms humans where the problem is a structured data, and not a perception problem. Knowing this, failing to implement a strategy could prove hugely expensive to any business.</div></div><div class="bookmark-href"><img src="https://static-exp1.licdn.com/scds/common/u/images/logos/favicons/v1/favicon.ico" class="icon bookmark-icon"/>https://www.linkedin.com/pulse/understanding-bayes-error-how-low-cost-machine-learning-malcolm-mason?articleId=6468081107404492800</div></div><img src="https://media-exp1.licdn.com/dms/image/C5612AQHoX3I5XHr-9A/article-cover_image-shrink_600_2000/0?e=1608163200&amp;v=beta&amp;t=ZcNrn05IvwSMDHDXfqhDnAmyrwU-qOU02HCOHAkSuZE" class="bookmark-image"/></a></figure><p id="7e6839b9-127c-4b65-826f-435621b696fd" class="">
+</p><p id="8d255761-ddb4-4cc7-b1d4-ffe79f4ae724" class=""><strong>Why compare ML to human-level perfomance</strong></p><figure id="401257e9-b6f8-4a82-9d16-97ac3ae14bc7" class="image"><a href="Week%201/Untitled%203.png"><img style="width:803px" src="Week%201/Untitled%203.png"/></a></figure><h2 id="915271b5-306b-4749-80df-4b2a90515248" class="">Avoidable Bias</h2><p id="fd96c412-e0ef-4bde-9b3f-15a217f6c9c8" class="">The avoidable bias occurs when, there&#x27;s a difference between Bayes error or approximation of Bayes error and the training error. So you would want is to keep improving your training perfomance until you get down to Bayes error but not better, you will only get better than Bayes error when the model is overfitting.</p><h2 id="8341e0ff-b4cb-4eae-8dcf-8ba2fc0797c9" class="">Understanding human-level performance</h2><p id="bdcc41b5-a5e0-4696-9aad-912a983663c7" class="">What is &quot;human-level&quot; error?</p><p id="6ac04e86-5ca0-44d5-a348-fcae2f8cc7a5" class="">
+</p><figure id="584d712e-672e-4227-ad0f-d60a7f24f14b" class="image"><a href="Week%201/Untitled%204.png"><img style="width:804px" src="Week%201/Untitled%204.png"/></a></figure><p id="584982fc-f7a6-484b-a504-298d5ff47be0" class="">The human optimal error(team of doctors) will thus be 0.5% or lower and we know that Bayes error is <style>@import url('https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.11.1/katex.min.css')</style><span data-token-index="0" contenteditable="false" class="notion-text-equation-token" style="user-select:all;-webkit-user-select:all;-moz-user-select:all"><span></span><span><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>&lt;</mo><mo>=</mo><mn>0.5</mn><mi mathvariant="normal">%</mi></mrow><annotation encoding="application/x-tex">&lt;= 0.5\%</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.5782em;vertical-align:-0.0391em;"></span><span class="mrel">&lt;</span></span><span class="base"><span class="strut" style="height:0.36687em;vertical-align:0em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.80556em;vertical-align:-0.05556em;"></span><span class="mord">0</span><span class="mord">.</span><span class="mord">5</span><span class="mord">%</span></span></span></span></span><span>﻿</span></span></p><h2 id="a724209f-e5a9-470b-9486-a6c9af5493f8" class="">Improving your model performance</h2><p id="003e179c-c6ff-4a37-9182-39b7294bb3b7" class="">Getting a supervised learning algorithm to work well means fundamentally two things:</p><ul id="2a907d59-822e-4c7e-b008-598ee299511d" class="bulleted-list"><li>You can fit the training set well (achieve low avoidable bias)</li></ul><ul id="d9d97609-1c44-451b-8bf9-3f410d6e9b61" class="bulleted-list"><li>The training set perfomance generalizes well to the dev and test set(varience is not bad)</li></ul><p id="1e2a4b7a-6b93-464d-b569-339cc6cfab8b" class="">
+</p><p id="12ad0153-9c3b-44ae-92e7-da994a89007c" class=""><strong>Reducing avoidable bias and varience</strong></p><ul id="142e8102-701f-4d6f-b312-5910737ef2c9" class="bulleted-list"><li>Reduce Avoidable Bias (human-level → Training error)<ul id="e9b9b037-00e3-4ba0-a68e-a76cee9a790f" class="bulleted-list"><li>Train bigger model</li></ul><ul id="b77ed39b-4148-4b15-af49-eb02f6bd5586" class="bulleted-list"><li>Train longer/better optimization algorithm</li></ul><ul id="eb708d53-c596-41f6-8677-598bc148a937" class="bulleted-list"><li>NN architecture/hyperparametes search (CNN/RNN)</li></ul></li></ul><ul id="879028c1-b809-43c8-9ce1-07a527bdd40b" class="bulleted-list"><li>Reduce Varience (Training error → Dev error)<ul id="864bc4e5-0dbc-454d-857d-0c8a389b1c8c" class="bulleted-list"><li>More data</li></ul><ul id="8d88a9c9-2412-4089-9725-75027e1aec14" class="bulleted-list"><li>Regularization(L2, dropout, data augmantation, early stopping)</li></ul><ul id="783777c7-cde0-44f5-8681-34edce310bb5" class="bulleted-list"><li>NN architecture/hyperparametes search.</li></ul></li></ul><h1 id="038b53c6-ce63-4dd2-ad48-065d575aa77b" class="">Q &amp; A</h1><h2 id="d119dd1b-5ee7-4609-b36f-049f2a465cfc" class="">Bird recognition in the city of Peacetopia (case study)</h2><h2 id="d21b455e-ca86-449e-86ed-4f400f0f42b7" class=""><strong>Problem Statement</strong></h2><ol id="0be3ccf0-4508-4b50-b548-617f04010943" class="numbered-list" start="1"><li>This example is adapted from a real production application, but with details disguised to protect confidentiality.</li></ol><p id="556eb47d-965a-4ef5-860a-369838af826b" class="">
+</p><figure id="54d0d190-cd2a-4a60-b281-91ba118665fe" class="image"><a href="Week%201/Untitled%205.png"><img style="width:1676px" src="Week%201/Untitled%205.png"/></a></figure><p id="b2399774-ffc8-43db-a574-73ed886ff1ea" class="">You are a famous researcher in the City of Peacetopia. The people of Peacetopia have a common characteristic: they are afraid of birds. To save them, you have <strong>to build an algorithm that will detect any bird flying over Peacetopia</strong> and alert the population.</p><p id="4ffb7bea-c9db-4b5b-9374-505787af165c" class="">The City Council gives you a dataset of 10,000,000 images of the sky above Peacetopia, taken from the city’s security cameras. They are labelled:</p><ul id="f8946443-46b2-46de-9749-cfa340f48fd4" class="bulleted-list"><li>y = 0: There is no bird on the image</li></ul><ul id="25ee29de-45d1-4ab4-8556-593706fc7f0c" class="bulleted-list"><li>y = 1: There is a bird on the image</li></ul><p id="56af5b5f-b020-40ac-aacb-2dd857a211d3" class="">Your goal is to build an algorithm able to classify new images taken by security cameras from Peacetopia.</p><p id="2d2d4597-ebcb-4ecb-946f-ccc0f9ddbc93" class="">There are a lot of decisions to make:</p><ul id="95f8a49e-f46f-4e4b-a5d9-e4e62d90437e" class="bulleted-list"><li>What is the evaluation metric?</li></ul><ul id="68d3db4a-bec7-4cd1-8aad-8179c8cd7204" class="bulleted-list"><li>How do you structure your data into train/dev/test sets?</li></ul><h2 id="d9451763-2bd9-485e-a750-67c747d48850" class=""><strong>Metric of success</strong></h2><p id="155dd178-3f22-4c9c-b7ab-b02cbce7e71b" class="">The City Council tells you that they want an algorithm that</p><ol id="afd33b88-0cbc-4f12-8e77-03faf674aae4" class="numbered-list" start="1"><li>Has high accuracy</li></ol><ol id="6e953d00-86bf-4435-a017-e88056420af1" class="numbered-list" start="2"><li>Runs quickly and takes only a short time to classify a new image.</li></ol><ol id="46a41ef0-5885-470c-b4e9-33e40a1b8dab" class="numbered-list" start="3"><li>Can fit in a small amount of memory, so that it can run in a small processor that the city will attach to many different security cameras.</li></ol><p id="31a6de80-ba78-49c5-9543-1e21548b330c" class="">Note: Having three evaluation metrics makes it harder for you to quickly choose between two different algorithms, and will slow down the speed with which your team can iterate. True/False?</p><ul id="3471feb2-815d-443f-8b78-91abf4f47b7a" class="bulleted-list"><li><strong>True</strong></li></ul><p id="ae3b9297-b5de-4a6e-a45c-7ca65a5fbbfb" class="">
+</p><p id="eb178b5b-67b1-4cfb-8993-190d93b0a2a1" class="">2. After further discussions, the city narrows down its criteria to:</p><ul id="e4923bf3-4c82-4b86-a924-09852438eaab" class="bulleted-list"><li>&quot;We need an algorithm that can let us know a bird is flying over Peacetopia as accurately as possible.&quot;</li></ul><ul id="6413f85f-6ce6-429d-8beb-c10b32bf9353" class="bulleted-list"><li>&quot;We want the trained model to take no more than 10sec to classify a new image.”</li></ul><ul id="6a38a8d2-19ba-48b8-ab0c-33d601e47489" class="bulleted-list"><li>“We want the model to fit in 10MB of memory.”</li></ul><p id="0a689d38-7c53-434a-b229-1b53be21fd41" class="">If you had the three following models, which one would you choose?<div class="indented"><p id="0181a24d-8a96-428a-be8f-d748f4244eac" class=""><strong>Test Accuracy: 98%</strong></p><p id="22692ce3-026f-49ed-99a6-788f2b89061c" class=""><strong>Runtime: 9 sec</strong></p><p id="913e7c27-9477-4bd9-9d62-e4e4edc03e7d" class=""><strong>Memory size: 9MB</strong></p></div></p><p id="c0eedd57-4594-4f60-94a2-1d740d128d28" class=""><em>Justification:</em> Correct! As soon as the runtime is less than 10 seconds you&#x27;re good. So, you may simply maximize the test accuracy after you made sure the runtime is &lt;10sec.</p><p id="c93ee23f-f193-47f5-b557-f3c654beea09" class="">
+</p><p id="8034ea8e-d743-4b64-bd4c-f25a47897524" class="">3. Based on the city’s requests, which of the following would you say is true?</p><ul id="6897956d-dd01-402b-bfe7-58603b763f50" class="bulleted-list"><li><strong>Accuracy is an optimizing metric; running time and memory size are a satisficing metrics.</strong></li></ul><p id="0803305e-5eb4-457d-8f17-0460815472c2" class="">
+</p><p id="8de88cd7-fa10-4e78-a1f0-763eca7c6c39" class="">4. <strong>Structuring your data</strong></p><p id="cf88d38a-6b96-4498-ac99-84dc50d1e6e2" class="">Before implementing your algorithm, you need to split your data into train/dev/test sets. Which of these do you think is the best choice?<div class="indented"><p id="2b153b94-77f3-4a83-86d6-e4edeb72bd73" class=""><strong>Train: 9,500,000 </strong></p><p id="0999fa3b-21ad-46df-928c-372ec85471f2" class=""><strong>Dev: 250,000</strong></p><p id="d17d088e-2515-4866-9595-3d5b6f679b35" class=""><strong>Test: 250,000</strong></p></div></p><p id="acd2c79f-0a3c-486d-a8a9-8fabacc3dc8a" class="">
+</p><p id="a1e84607-fc14-4cba-a552-93a6f2565953" class="">5. After setting up your train/dev/test sets, the City Council comes across another 1,000,000 images, called the “citizens’ data”. Apparently the citizens of Peacetopia are so scared of birds that they volunteered to take pictures of the sky and label them, thus contributing these additional 1,000,000 images. These images are different from the distribution of images the City Council had originally given you, but you think it could help your algorithm.</p><p id="30f8d934-251c-4fe4-8b73-1e89381d87ae" class="">Notice that adding this additional data to the training set will make the distribution of the training set different from the distributions of the dev and test sets.</p><p id="e6bef783-6efe-46d5-b21a-74efe49c5f50" class="">Is the following statement true or false?</p><p id="b1859679-800e-493d-b20f-919c87dfd64b" class="">&quot;You should not add the citizens&#x27; data to the training set, because if the training distribution is different from the dev and test sets, then this will not allow the model to perform well on the test set.&quot;</p><ul id="7e82c9c9-5af6-4904-b9e0-026589dbd7a5" class="bulleted-list"><li><strong>False</strong><p id="e22bce0f-5306-4223-bb64-10461f3aec09" class=""><em>Justification</em>: Sometimes we&#x27;ll need to train the model on the data that is available, and its distribution may not be the same as the data that will occur in production. Also, adding training data that differs from the dev set may still help the model improve performance on the dev set. What matters is that the dev and test set have the same distribution.</p></li></ul><p id="a4fc02b6-daed-410b-afcf-dd0c81d7c11e" class="">
+</p><p id="b8c191fd-bdcd-41ec-8549-7c23f6b37005" class="">6. One member of the City Council knows a little about machine learning, and thinks you should add the 1,000,000 citizens’ data images to the test set. You object because:</p><ul id="cb448d31-b236-4f87-96bb-a6610d959389" class="bulleted-list"><li>The test set no longer reflects the distribution of data (security cameras) you most care about.</li></ul><ul id="685772b4-28a0-4c59-be4f-03ede5d65493" class="bulleted-list"><li>This would cause the dev and test set distributions to become different. This is a bad idea because you’re not aiming where you want to hit.</li></ul><p id="7a3eda86-3814-4134-9a78-a2f68f52c771" class="">
+</p><p id="64a3a820-f39b-456a-9e11-df9962f3bed4" class="">7. You train a system, and its errors are as follows (error = 100%-Accuracy):<div class="indented"><p id="16cd7554-9009-4a3d-8cb8-9cc7652b4b7c" class="">Dev set error: 4.5%</p><p id="aeef3876-657c-4c76-8700-3fbe82976534" class="">Training set error: 4%</p></div></p><p id="077f2c4d-1fe6-44a1-b224-427af5b1d962" class="">
+</p><p id="b64be56d-6b4e-42d4-9de2-511621f3df28" class="">This suggests that one good avenue for improving performance is to train a bigger network so as to drive down the 4.0% training error. Do you agree?</p><ul id="23b3cc25-b30a-498a-bdae-5c201abe1e8c" class="bulleted-list"><li>No, because there is insufficient information to tell.</li></ul><p id="ceea41a8-80e4-49c4-98fc-a86663534862" class="">
+</p><p id="3a5e351b-a85d-49fa-940a-484bab6731d4" class="">8. You ask a few people to label the dataset so as to find out what is human-level performance. You find the following levels of accuracy:<div class="indented"><p id="dcfb1c7c-a66c-43cd-aa8c-fb22074b318e" class="">Bird watching expert #1: 0.3% error</p><p id="6d1ed36d-16a7-49b7-b9f1-47a926b654de" class="">Bird watching expert #2: 0.5% error</p><p id="0d40359c-625f-40a7-9997-95d8cb2447b4" class="">Normal person #1 (not a bird watching expert): 1.0% error</p><p id="ed6fa703-6cd1-4c05-9339-bdbaf6c37356" class="">Normal person #2 (not a bird watching expert): 1.2% error</p></div></p><p id="f639bcc6-a5e3-4459-9147-0a7d3fb671f4" class="">
+</p><p id="4596ab16-dac6-468d-ad14-1492292afde5" class="">If your goal is to have “human-level performance” be a proxy (or estimate) for Bayes error, how would you define “human-level performance”?</p><ul id="d997f816-c878-4fb1-88e0-f606cadf481c" class="bulleted-list"><li><strong>0.3% (accuracy of expert #1)</strong></li></ul><p id="bcb5148f-0adb-46e6-a5b4-8e9f96af6ffb" class="">
+</p><p id="abb238ed-94ab-4486-ac52-4b952d4c4533" class="">9. Which of the following statements do you agree with?</p><ul id="4264bebe-18b1-4ade-9dce-55ea9512c050" class="bulleted-list"><li>A learning algorithm’s performance can be better than human-level performance but it can never be better than Bayes error.</li></ul><p id="fa1cecb0-fdf6-45b2-baff-d0cf342ddd55" class="">
+</p><p id="94dc5590-a784-47c3-be9d-8127ba87049d" class="">10. You find that a team of ornithologists debating and discussing an image gets an even better 0.1% performance, so you define that as “human-level performance.” After working further on your algorithm, you end up with the following:<div class="indented"><p id="6ed2d648-77cf-4120-9ecb-e2da16e42996" class=""><strong>Human-level performance: 0.1%</strong></p><p id="9ec20b61-4100-48ff-b6b9-c9f887afa0ff" class=""><strong>Training set error: 2%</strong></p><p id="833923be-3cd4-4cbd-abfa-6e739b742dab" class=""><strong>Dev set error: 2.1%</strong></p></div></p><p id="8213194b-dfb7-40ea-82a3-e29176baf67e" class="">
+</p><p id="91a0b6d5-4176-400b-aedd-9ffbd7898b21" class="">Based on the evidence you have, which two of the following four options seem the most promising to try? (Check two options.)</p><ul id="35c98215-4a1c-4d5f-a21f-e98d87922534" class="bulleted-list"><li>Try decreasing regularization.</li></ul><ul id="596769f8-c01b-4c32-a6c5-3eb8982ec5ff" class="bulleted-list"><li>Train a bigger model to try to do better on the training set.</li></ul><p id="5d9addec-3710-4289-8da0-b4505a65c9cb" class="">
+</p><p id="0c869969-06ac-467d-9c13-875d67052096" class="">11. You also evaluate your model on the test set, and find the following:<div class="indented"><p id="527d4347-4755-4e91-832a-2cf47887fd03" class=""><strong>Human-level performance: 0.1%</strong></p><p id="31c2f85a-fd50-4c30-9fbb-1df9e31e11e6" class=""><strong>Training set error: 2%</strong></p><p id="255f9f67-18b3-4390-a029-944032594fa4" class=""><strong>Dev set error: 2.1%</strong></p><p id="4f306895-f653-4686-8659-2d53c5f5ec7d" class=""><strong>Test set error: 7%</strong></p><p id="c4485632-cb37-421d-80ba-028c841101f1" class="">
+</p></div></p><p id="f25ee01a-7b24-49d5-83a9-3833468abf1e" class="">What does this mean? (Check the two best options.)</p><ul id="bd08eefa-39d4-4efc-88a5-b84a417a5f5c" class="bulleted-list"><li>You should try to get a bigger dev set.</li></ul><ul id="2144929e-62fa-4d26-a741-f2cc8eac589c" class="bulleted-list"><li>You have overfit to the dev set.</li></ul><p id="3e9e4c18-0c95-4cff-9c76-99c8b195f89f" class="">
+</p><p id="f16d0e19-644f-494d-9100-f55f83b42762" class="">12. After working on this project for a year, you finally achieve:<div class="indented"><p id="427487db-70bb-4e4b-9619-c4238902f410" class="">Human-level performance: 0.10%</p><p id="6bd772df-f370-484c-af29-7b3999377aa0" class="">Training set error: 0.05%
+Dev set error: 0.05%</p><p id="f6104749-d8d8-4506-ba69-d44efa2ccc5c" class="">
+</p></div></p><p id="209df4c7-7804-468e-a0b8-662f5b869035" class="">What can you conclude? (Check all that apply.)</p><ul id="bed9dd1f-e143-47f3-836b-ff333632ed93" class="bulleted-list"><li>If the test set is big enough for the 0.05% error estimate to be accurate, this implies Bayes error is<style>@import url('https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.11.1/katex.min.css')</style><span data-token-index="0" contenteditable="false" class="notion-text-equation-token" style="user-select:all;-webkit-user-select:all;-moz-user-select:all"><span></span><span><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>≤</mo><mn>0.05</mn><mi mathvariant="normal">%</mi></mrow><annotation encoding="application/x-tex"> \leq 0.05\%</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7719400000000001em;vertical-align:-0.13597em;"></span><span class="mrel">≤</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.80556em;vertical-align:-0.05556em;"></span><span class="mord">0</span><span class="mord">.</span><span class="mord">0</span><span class="mord">5</span><span class="mord">%</span></span></span></span></span><span>﻿</span></span></li></ul><ul id="d46db7bb-d948-42ca-80a5-3ab6ee3c7162" class="bulleted-list"><li>It is now harder to measure avoidable bias, thus progress will be slower going forward.</li></ul><p id="5c5831d4-0b37-46f8-816a-7805005a912d" class="">
+</p><p id="9aa95713-3620-46ba-bfe7-7fe75e6daf2a" class="">13. It turns out Peacetopia has hired one of your competitors to build a system as well. Your system and your competitor both deliver systems with about the same running time and memory size. However, your system has higher accuracy! However, when Peacetopia tries out your and your competitor’s systems, they conclude they actually like your competitor’s system better, because even though you have higher overall accuracy, you have more false negatives (failing to raise an alarm when a bird is in the air). What should you do?</p><ul id="c3d78e81-b66e-4dd5-8b96-9f02a15ec47b" class="bulleted-list"><li><strong>Rethink the appropriate metric for this task, and ask your team to tune to the new metric.</strong></li></ul><p id="eb1c00ee-a8d8-4bcf-b2fb-747396a87478" class="">
+</p><p id="f509a9d2-b998-4140-b7b2-6bf5bf34fc38" class="">14. You’ve handily beaten your competitor, and your system is now deployed in Peacetopia and is protecting the citizens from birds! But over the last few months, a new species of bird has been slowly migrating into the area, so the performance of your system slowly degrades because your data is being tested on a new type of data.</p><p id="e4de361e-f7bf-43ba-b246-38d203c17297" class="">
+</p><figure id="666cd860-0c30-4f2f-8f08-a60af95897f8" class="image"><a href="Week%201/Untitled%206.png"><img style="width:640px" src="Week%201/Untitled%206.png"/></a></figure><p id="f90b9932-62b2-42fe-925a-d405b5f20f70" class="">You have only 1,000 images of the new species of bird. The city expects a better system from you within the next 3 months. Which of these should you do first?</p><ul id="c72feb7d-da5b-4dde-a99f-c929a1d294db" class="bulleted-list"><li><strong>Use the data you have to define a new evaluation metric (using a new dev/test set) taking into account the new species, and use that to drive further progress for your team.</strong></li></ul><p id="66387364-6eaa-42b2-af31-d80247fc90bd" class="">
+</p><p id="d4849634-c153-41e6-88b9-2013dcff5c8f" class="">15. The City Council thinks that having more Cats in the city would help scare off birds. They are so happy with your work on the Bird detector that they also hire you to build a Cat detector. (Wow Cat detectors are just incredibly useful aren’t they.) Because of years of working on Cat detectors, you have such a huge dataset of 100,000,000 cat images that training on this data takes about two weeks. Which of the statements do you agree with? (Check all that agree.)</p><ul id="731ddaaa-5c7a-48f2-99a6-4d3d0948b3f4" class="bulleted-list"><li><strong>Needing two weeks to train will limit the speed at which you can iterate.</strong></li></ul><ul id="cfb1e03c-c477-4c2a-946d-3300930304c1" class="bulleted-list"><li><strong>Buying faster computers could speed up your teams’ iteration speed and thus your team’s productivity.</strong></li></ul><ul id="90e7b4ec-5e67-4a0c-a8cf-4d31c2ea5908" class="bulleted-list"><li><strong>If 100,000,000 examples is enough to build a good enough Cat detector, you might be better of training with just 10,000,000 examples to gain a \approx≈10x improvement in how quickly you can run experiments, even if each model performs a bit worse because it’s trained on less data.</strong></li></ul><p id="74644c26-2795-48b2-b482-52c884db6a0e" class="">
+</p></div></article></body></html>

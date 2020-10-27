@@ -66,7 +66,7 @@ This is the second course of the Deep Learning Specialization.
 - [x] Week 2: Optimization algorithms
 - [x] Week 3: Hyperparameter tuning, Batch Normalization and Programming Frameworks
 
-## Course 3: Structuring Machine Learning Projects
+## Course 3: Structuring Machine Learning Projects [Completed]
 
 You will learn how to build a successful machine learning project. If you aspire to be a technical leader in AI, and know how to set direction for your team's work, this course will show you how.
 
@@ -82,6 +82,18 @@ for reducing error
 
 This is a standalone course, and you can take this so long as you have basic machine learning knowledge.
 This is the third course in the Deep Learning Specialization.
+
+
+---
+
+- [My Notes](https://refined-github-html-preview.kidonng.workers.dev/mmphego/DeepLearning-AI/raw/master/Course%203%20Structuring%20Machine%20Learning%20Projects/Course%203%20Structuring%20Machine%20Learning%20Projects.html)
+---
+
+### Syllabus - What I've learned from this course
+
+- [x] Week 1: Ways to diagnose and analyse errors in an ML system
+- [x] Week 2: Understand complex ML settings, data mismatch and leveraging pretrained systems.
+
 
 ## Course 4: Convolutional Neural Networks
 
