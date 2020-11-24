@@ -122,6 +122,7 @@ This is the fourth course of the Deep Learning Specialization.
 - [x] Week 3: Learned how to apply my knowledge of CNNs to one of the toughest but hottest field of computer vision: Object detection.
 - [x] Week 4: Discovered how CNNs can be applied to multiple fields, including art generation and face recognition. Implemented my own algorithm to generate art and recognize faces!
 
+
 ## Course 5: Sequence Models
 
 This course will teach you how to build models for natural language, audio, and other sequence data. Thanks to deep learning, sequence algorithms are working far better than just two years ago, and this is enabling numerous exciting applications in speech recognition, music synthesis, chatbots, machine translation, natural language understanding, and many others.
