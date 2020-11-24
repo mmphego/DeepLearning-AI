@@ -86,7 +86,7 @@ This is the third course in the Deep Learning Specialization.
 
 ---
 
-- [My Notes](https://refined-github-html-preview.kidonng.workers.dev/mmphego/DeepLearning-AI/master/Course%203%20-%20Structuring%20Machine%20Learning%20Projects/notes/Course%203%20Structuring%20Machine%20Learning%20Projects.html)
+- [My Notes](https://refined-github-html-preview.kidonng.workers.dev/mmphego/DeepLearning-AI/raw/master/Course%203%20-%20Structuring%20Machine%20Learning%20Projects/notes/Course%203%20Structuring%20Machine%20Learning%20Projects.html)
 ---
 
 ### Syllabus - What I've learned from this course
