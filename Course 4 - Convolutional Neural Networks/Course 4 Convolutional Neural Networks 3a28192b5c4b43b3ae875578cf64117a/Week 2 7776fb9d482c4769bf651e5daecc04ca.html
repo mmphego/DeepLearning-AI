@@ -1,0 +1,641 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Week 2</title><style>
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	text-indent: -1.7em;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, YuMincho, "Yu Mincho", "Hiragino Mincho ProN", "Hiragino Mincho Pro", "Songti TC", "Songti SC", "SimSun", "Nanum Myeongjo", NanumMyeongjo, Batang, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC', 'Noto Sans CJK KR'; }
+
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC', 'Noto Sans Mono CJK KR'; }
+
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, YuMincho, "Yu Mincho", "Hiragino Mincho ProN", "Hiragino Mincho Pro", "Songti TC", "Songti SC", "SimSun", "Nanum Myeongjo", NanumMyeongjo, Batang, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC', 'Noto Sans CJK KR'; }
+
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC', 'Noto Sans Mono CJK KR'; }
+
+.highlight-default {
+}
+.highlight-gray {
+	color: rgb(155,154,151);
+}
+.highlight-brown {
+	color: rgb(100,71,58);
+}
+.highlight-orange {
+	color: rgb(217,115,13);
+}
+.highlight-yellow {
+	color: rgb(223,171,1);
+}
+.highlight-teal {
+	color: rgb(15,123,108);
+}
+.highlight-blue {
+	color: rgb(11,110,153);
+}
+.highlight-purple {
+	color: rgb(105,64,165);
+}
+.highlight-pink {
+	color: rgb(173,26,114);
+}
+.highlight-red {
+	color: rgb(224,62,62);
+}
+.highlight-gray_background {
+	background: rgb(235,236,237);
+}
+.highlight-brown_background {
+	background: rgb(233,229,227);
+}
+.highlight-orange_background {
+	background: rgb(250,235,221);
+}
+.highlight-yellow_background {
+	background: rgb(251,243,219);
+}
+.highlight-teal_background {
+	background: rgb(221,237,234);
+}
+.highlight-blue_background {
+	background: rgb(221,235,241);
+}
+.highlight-purple_background {
+	background: rgb(234,228,242);
+}
+.highlight-pink_background {
+	background: rgb(244,223,235);
+}
+.highlight-red_background {
+	background: rgb(251,228,228);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(55, 53, 47, 0.6);
+	fill: rgba(55, 53, 47, 0.6);
+}
+.block-color-brown {
+	color: rgb(100,71,58);
+	fill: rgb(100,71,58);
+}
+.block-color-orange {
+	color: rgb(217,115,13);
+	fill: rgb(217,115,13);
+}
+.block-color-yellow {
+	color: rgb(223,171,1);
+	fill: rgb(223,171,1);
+}
+.block-color-teal {
+	color: rgb(15,123,108);
+	fill: rgb(15,123,108);
+}
+.block-color-blue {
+	color: rgb(11,110,153);
+	fill: rgb(11,110,153);
+}
+.block-color-purple {
+	color: rgb(105,64,165);
+	fill: rgb(105,64,165);
+}
+.block-color-pink {
+	color: rgb(173,26,114);
+	fill: rgb(173,26,114);
+}
+.block-color-red {
+	color: rgb(224,62,62);
+	fill: rgb(224,62,62);
+}
+.block-color-gray_background {
+	background: rgb(235,236,237);
+}
+.block-color-brown_background {
+	background: rgb(233,229,227);
+}
+.block-color-orange_background {
+	background: rgb(250,235,221);
+}
+.block-color-yellow_background {
+	background: rgb(251,243,219);
+}
+.block-color-teal_background {
+	background: rgb(221,237,234);
+}
+.block-color-blue_background {
+	background: rgb(221,235,241);
+}
+.block-color-purple_background {
+	background: rgb(234,228,242);
+}
+.block-color-pink_background {
+	background: rgb(244,223,235);
+}
+.block-color-red_background {
+	background: rgb(251,228,228);
+}
+.select-value-color-default { background-color: rgba(206,205,202,0.5); }
+.select-value-color-gray { background-color: rgba(155,154,151, 0.4); }
+.select-value-color-brown { background-color: rgba(140,46,0,0.2); }
+.select-value-color-orange { background-color: rgba(245,93,0,0.2); }
+.select-value-color-yellow { background-color: rgba(233,168,0,0.2); }
+.select-value-color-green { background-color: rgba(0,135,107,0.2); }
+.select-value-color-blue { background-color: rgba(0,120,223,0.2); }
+.select-value-color-purple { background-color: rgba(103,36,222,0.2); }
+.select-value-color-pink { background-color: rgba(221,0,129,0.2); }
+.select-value-color-red { background-color: rgba(255,0,26,0.2); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="7776fb9d-482c-4769-bf65-1e5daecc04ca" class="page sans"><header><h1 class="page-title">Week 2</h1><table class="properties"><tbody><tr class="property-row property-row-select"><th><span class="icon property-icon"><svg viewBox="0 0 14 14" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.4);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesSelect"><path d="M7,13 C10.31348,13 13,10.31371 13,7 C13,3.68629 10.31348,1 7,1 C3.68652,1 1,3.68629 1,7 C1,10.31371 3.68652,13 7,13 Z M3.75098,5.32278 C3.64893,5.19142 3.74268,5 3.90869,5 L10.09131,5 C10.25732,5 10.35107,5.19142 10.24902,5.32278 L7.15771,9.29703 C7.07764,9.39998 6.92236,9.39998 6.84229,9.29703 L3.75098,5.32278 Z"></path></svg></span>Class</th><td><span class="selected-value select-value-color-blue">C4W2</span></td></tr><tr class="property-row property-row-date"><th><span class="icon property-icon"><svg viewBox="0 0 14 14" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.4);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesDate"><path d="M10.8889,5.5 L3.11111,5.5 L3.11111,7.05556 L10.8889,7.05556 L10.8889,5.5 Z M12.4444,1.05556 L11.6667,1.05556 L11.6667,0 L10.1111,0 L10.1111,1.05556 L3.88889,1.05556 L3.88889,0 L2.33333,0 L2.33333,1.05556 L1.55556,1.05556 C0.692222,1.05556 0.00777777,1.75556 0.00777777,2.61111 L0,12.5 C0,13.3556 0.692222,14 1.55556,14 L12.4444,14 C13.3,14 14,13.3556 14,12.5 L14,2.61111 C14,1.75556 13.3,1.05556 12.4444,1.05556 Z M12.4444,12.5 L1.55556,12.5 L1.55556,3.94444 L12.4444,3.94444 L12.4444,12.5 Z M8.55556,8.61111 L3.11111,8.61111 L3.11111,10.1667 L8.55556,10.1667 L8.55556,8.61111 Z"></path></svg></span>Created</th><td><time>@Oct 31, 2020 1:19 AM</time></td></tr><tr class="property-row property-row-file"><th><span class="icon property-icon"><svg viewBox="0 0 14 14" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.4);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesFile"><path d="M5.94578,14 C4.62416,14 3.38248,13.4963 2.44892,12.585 C1.514641,11.6736 1,10.4639 1,9.17405 C1.00086108,7.88562 1.514641,6.67434 2.44892,5.76378 L7.45612,0.985988 C8.80142,-0.327216 11.1777,-0.332396 12.5354,0.992848 C13.9369,2.36163 13.9369,4.58722 12.5354,5.95418 L8.03046,10.2414 C7.16278,11.0877 5.73682,11.0894 4.86024,10.2345 C3.98394,9.37789 3.98394,7.98769 4.86024,7.1327 L6.60422,5.4317 L7.87576,6.67196 L6.13177,8.37297 C6.01668,8.48539 6.00003,8.61545 6.00003,8.68335 C6.00003,8.75083 6.01668,8.88103 6.13177,8.99429 C6.36197,9.21689 6.53749,9.21689 6.76768,8.99429 L11.2707,4.70622 C11.9645,4.03016 11.9645,2.91757 11.2638,2.23311 C10.5843,1.57007 9.40045,1.57007 8.72077,2.23311 L3.71342,7.0109 C3.12602,7.58406 2.79837,8.35435 2.79837,9.17405 C2.79837,9.99459 3.12602,10.7654 3.72045,11.3446 C4.90947,12.5062 6.98195,12.5062 8.17096,11.3446 L10.41911,9.15165 L11.6906,10.3919 L9.4425,12.585 C8.50808,13.4963 7.2664,14 5.94578,14 Z"></path></svg></span>Materials</th><td></td></tr><tr class="property-row property-row-url"><th><span class="icon property-icon"><svg viewBox="0 0 14 14" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.4);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesUrl"><path d="M3.73333,3.86667 L7.46667,3.86667 C8.49613,3.86667 9.33333,4.70387 9.33333,5.73333 C9.33333,6.7628 8.49613,7.6 7.46667,7.6 L6.53333,7.6 C6.01813,7.6 5.6,8.0186 5.6,8.53333 C5.6,9.04807 6.01813,9.46667 6.53333,9.46667 L7.46667,9.46667 C9.5284,9.46667 11.2,7.79507 11.2,5.73333 C11.2,3.6716 9.5284,2 7.46667,2 L3.73333,2 C1.6716,2 0,3.6716 0,5.73333 C0,7.124 0.762067,8.33453 1.88953,8.97713 C1.87553,8.83107 1.86667,8.6836 1.86667,8.53333 C1.86667,7.92013 1.98753,7.33447 2.2036,6.7978 C1.99267,6.4954 1.86667,6.12953 1.86667,5.73333 C1.86667,4.70387 2.70387,3.86667 3.73333,3.86667 Z M12.1095,5.28907 C12.1231,5.4356 12.1333,5.58307 12.1333,5.73333 C12.1333,6.34607 12.0101,6.9294 11.7931,7.46513 C12.0059,7.768 12.1333,8.13573 12.1333,8.53333 C12.1333,9.5628 11.2961,10.4 10.2667,10.4 L6.53333,10.4 C5.50387,10.4 4.66667,9.5628 4.66667,8.53333 C4.66667,7.50387 5.50387,6.66667 6.53333,6.66667 L7.46667,6.66667 C7.98187,6.66667 8.4,6.24807 8.4,5.73333 C8.4,5.2186 7.98187,4.8 7.46667,4.8 L6.53333,4.8 C4.4716,4.8 2.8,6.4716 2.8,8.53333 C2.8,10.59507 4.4716,12.2667 6.53333,12.2667 L10.2667,12.2667 C12.3284,12.2667 14,10.59507 14,8.53333 C14,7.14267 13.2375,5.93167 12.1095,5.28907 Z"></path></svg></span>Property</th><td></td></tr><tr class="property-row property-row-checkbox"><th><span class="icon property-icon"><svg viewBox="0 0 14 14" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.4);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesCheckbox"><path d="M0,3 C0,1.34314 1.34326,0 3,0 L11,0 C12.6567,0 14,1.34314 14,3 L14,11 C14,12.6569 12.6567,14 11,14 L3,14 C1.34326,14 0,12.6569 0,11 L0,3 Z M3,1.5 C2.17139,1.5 1.5,2.17157 1.5,3 L1.5,11 C1.5,11.8284 2.17139,12.5 3,12.5 L11,12.5 C11.8286,12.5 12.5,11.8284 12.5,11 L12.5,3 C12.5,2.17157 11.8286,1.5 11,1.5 L3,1.5 Z M2.83252,6.8161 L3.39893,6.27399 L3.57617,6.10425 L3.92334,5.77216 L4.26904,6.10559 L4.44531,6.27582 L5.58398,7.37402 L9.28271,3.81073 L9.45996,3.64008 L9.80664,3.3056 L10.1538,3.63989 L10.3311,3.81067 L10.8936,4.35303 L11.0708,4.52399 L11.4434,4.88379 L11.0708,5.24353 L10.8936,5.41437 L6.1084,10.0291 L5.93115,10.2 L5.58398,10.5344 L5.23682,10.2 L5.05957,10.0292 L2.83057,7.87946 L2.65283,7.70801 L2.27832,7.34674 L2.6543,6.98694 L2.83252,6.8161 Z"></path></svg></span>Reviewed</th><td><div class="checkbox checkbox-on"></div></td></tr><tr class="property-row property-row-select"><th><span class="icon property-icon"><svg viewBox="0 0 14 14" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.4);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesSelect"><path d="M7,13 C10.31348,13 13,10.31371 13,7 C13,3.68629 10.31348,1 7,1 C3.68652,1 1,3.68629 1,7 C1,10.31371 3.68652,13 7,13 Z M3.75098,5.32278 C3.64893,5.19142 3.74268,5 3.90869,5 L10.09131,5 C10.25732,5 10.35107,5.19142 10.24902,5.32278 L7.15771,9.29703 C7.07764,9.39998 6.92236,9.39998 6.84229,9.29703 L3.75098,5.32278 Z"></path></svg></span>Type</th><td></td></tr></tbody></table></header><div class="page-body"><h1 id="d83a4e4d-2670-41a0-a5f6-40d8a3ba59c9" class="">Case Studies</h1><h2 id="a863551f-f685-4285-aa58-73f321367b3f" class="">Classic Networks</h2><p id="6b5a9dd0-97a4-4e81-a612-8866d1bddb63" class="">In this section we will look at some of the classic neural networks architectures, namely:</p><p id="1e8477e6-8b2c-48d5-8d9c-053de04a0ae9" class="">
+</p><p id="8f2417d2-db70-47c0-8c05-91dff616c1ee" class=""><strong><a href="http://yann.lecun.com/exdb/publis/pdf/lecun-98.pdf">LeNet - 5</a></strong></p><figure id="4fd6c915-7258-4ba0-9921-3d6c9bf2a647" class="image"><a href="Week%202%207776fb9d482c4769bf651e5daecc04ca/Untitled.png"><img style="width:1160px" src="Week%202%207776fb9d482c4769bf651e5daecc04ca/Untitled.png"/></a></figure><p id="27a15029-19d2-4940-869e-bbc4f92072d1" class="">The main goal of LeNet-5 was to recognise hand written digits.</p><ul id="5374c998-c3b3-41af-9459-f2885f16a11e" class="bulleted-list"><li>60 000  parameters</li></ul><ul id="5f464fa4-54af-4bf9-ad4f-49605f3097f0" class="bulleted-list"><li>nH and nW tend to descrease while nC increases</li></ul><ul id="7b6d1387-c58e-419d-ae3a-8e59f603b4e9" class="bulleted-list"><li>The common arrangement of layers is common as it follows the standard of: Conv→Pool→Conv→Pool→FC→FC→Output</li></ul><p id="e7f6e64b-620e-49dc-a231-5bc750749366" class="">It turns out if you read the paper, that people used sigmoid and tanh non-linearities instead of ReLu, and had non-linearities after pooling.</p><p id="3afe047b-3dc5-448a-b08c-b72819a34840" class="">
+</p><p id="fdc6059f-defa-4676-82f5-03a968a81292" class="">Useful resource: <a href="https://towardsdatascience.com/review-of-lenet-5-how-to-design-the-architecture-of-cnn-8ee92ff760ac">https://towardsdatascience.com/review-of-lenet-5-how-to-design-the-architecture-of-cnn-8ee92ff760ac</a></p><p id="f94efa86-7420-471d-be4f-d14c5e97e18e" class="">
+</p><p id="6659c150-b71b-4568-bee5-7f7df3d6aebc" class=""><strong>AlexNet</strong></p><figure id="0860ac9b-7346-44ab-91a6-10d168a0106c" class="image"><a href="Week%202%207776fb9d482c4769bf651e5daecc04ca/Untitled%201.png"><img style="width:773px" src="Week%202%207776fb9d482c4769bf651e5daecc04ca/Untitled%201.png"/></a></figure><p id="32efa0bc-558d-49ca-9c8e-8722b8c9133e" class="">This network had a lot of similarities to LeNet-5, but this had over 60million parameters, when training a lot of the layers where trained on multiple GPU&#x27;s.</p><p id="db166552-c277-47ec-8217-8f17ea2d4694" class="">
+</p><p id="ea0b198e-38df-4ac4-b85c-f991ef24a2f8" class=""><strong>VGG-16</strong></p><figure id="6ea14487-7b58-4bcb-96f4-57ae8e0689a5" class="image"><a href="Week%202%207776fb9d482c4769bf651e5daecc04ca/Untitled%202.png"><img style="width:776px" src="Week%202%207776fb9d482c4769bf651e5daecc04ca/Untitled%202.png"/></a></figure><p id="42fdc2e9-8d52-459d-b5c5-f1da40fae764" class="">One of the remarkable things with VGG-16 net is that instead of having many hyperparameters it was actually simplified to just a few hyperparameters, Conv-layers that are 3x3 filters with a stride of 1 and always use same adding, all max pooling layers are 2x2 with a stride of 2. The 16 in VGG refers to the number of layers that have weights. This is a large network with a total of 138 million parameters.</p><h2 id="62c58c3a-286a-40b8-baca-54385e18424e" class="">ResNets</h2><p id="656de463-e54e-4591-817d-7f47740ad01f" class="">Very, very deep neural networks are difficult to train because of vanishing and exploding gradient types of problems. In this section, we will learn about skip connections which allows you to take the activation from one layer and suddenly feed it to another layer even much deeper in the neural network. And using that, we&#x27;ll build ResNet which enables you to train very, very deep networks. Sometimes even networks of over 100 layers.</p><p id="5f8cd45d-6e0f-4b11-b58e-883f41c876d3" class="">ResNets are built out of something called residual blocks.</p><figure id="bf0a34b5-2158-4308-b74a-3897ae9dbd99" class="image"><a href="Week%202%207776fb9d482c4769bf651e5daecc04ca/Untitled%203.png"><img style="width:779px" src="Week%202%207776fb9d482c4769bf651e5daecc04ca/Untitled%203.png"/></a></figure><p id="2bfda43e-288c-462e-b42b-2d4e7c9f92fd" class="">What the authors found was that using residual blocks allows you to train much deeper neural networks and the way to build is by taking many of these residual blocks and stacking them together to form a deep network.</p><p id="28c3ce8a-e171-42b2-8683-ea22ce80a64d" class="">
+</p><p id="32a33bff-74f5-4ce5-8b22-54e81ec9fc0e" class="">To turn a &quot;plain network&quot; into a residual network you would need to skip networks as show in the image(blue lines). </p><figure id="b778c465-35fc-4d37-8937-08af9c704483" class="image"><a href="Week%202%207776fb9d482c4769bf651e5daecc04ca/Untitled%204.png"><img style="width:778px" src="Week%202%207776fb9d482c4769bf651e5daecc04ca/Untitled%204.png"/></a></figure><p id="97116ac6-23a2-4ca2-961d-0b125e32e78b" class="">In theory having a deeper network should help with the training, however, in practice havin a plain network which is deep simply means that  all your optimization algorithm just has a much harder time training and training error gets worse.</p><p id="ad765cdb-1ac4-4b04-981b-db120f12c32c" class="">But with ResNets, even as the number of layers gets deeper, the perfomance of the training error continously goes down, even if trained with over a hundred layer.</p><p id="93691a20-6c31-4bf1-9007-5da3ed176eab" class="">
+</p><p id="ee68b4f9-194a-4435-a64c-19a51ec9f4aa" class="">Resource: <a href="https://d2l.ai/chapter_convolutional-modern/resnet.html#">https://d2l.ai/chapter_convolutional-modern/resnet.html#</a></p><h2 id="1d637911-8c50-4dfd-8a6c-516bd9ec84b6" class="">Why ResNets Work?</h2><figure id="e77d976d-6e8e-4615-8932-aeed63cc698a" class="image"><a href="Week%202%207776fb9d482c4769bf651e5daecc04ca/Untitled%205.png"><img style="width:780px" src="Week%202%207776fb9d482c4769bf651e5daecc04ca/Untitled%205.png"/></a></figure><p id="999a7bad-c3b0-400f-9872-4d70c2f8e7cb" class="">Suppose you have an input X which feeds into a big nn and the output is <style>@import url('https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.11.1/katex.min.css')</style><span data-token-index="0" contenteditable="false" class="notion-text-equation-token" style="user-select:all;-webkit-user-select:all;-moz-user-select:all"><span></span><span><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>a</mi><mi>l</mi></msup></mrow><annotation encoding="application/x-tex"> a^{l}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.849108em;vertical-align:0em;"></span><span class="mord"><span class="mord mathdefault">a</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.849108em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight" style="margin-right:0.01968em;">l</span></span></span></span></span></span></span></span></span></span></span></span></span><span>﻿</span></span>and want to modify it such that it becomes a ResNet to make it a little deeper by adding few layers to the network. By adding 2 layers and making them residual blocks with a skip connection, the output of the network will thus be <style>@import url('https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.11.1/katex.min.css')</style><span data-token-index="0" contenteditable="false" class="notion-text-equation-token" style="user-select:all;-webkit-user-select:all;-moz-user-select:all"><span></span><span><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>a</mi><mrow><mo stretchy="false">[</mo><mi>l</mi><mo>+</mo><mn>2</mn><mo stretchy="false">]</mo></mrow></msup></mrow><annotation encoding="application/x-tex">a^{[l+2]}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8879999999999999em;vertical-align:0em;"></span><span class="mord"><span class="mord mathdefault">a</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8879999999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mopen mtight">[</span><span class="mord mathdefault mtight" style="margin-right:0.01968em;">l</span><span class="mbin mtight">+</span><span class="mord mtight">2</span><span class="mclose mtight">]</span></span></span></span></span></span></span></span></span></span></span></span></span><span>﻿</span></span> (assuming we using the ReLu activation) which equates to <style>@import url('https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.11.1/katex.min.css')</style><span data-token-index="0" contenteditable="false" class="notion-text-equation-token" style="user-select:all;-webkit-user-select:all;-moz-user-select:all"><span></span><span><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>g</mi><mo stretchy="false">(</mo><msup><mi>z</mi><mrow><mo stretchy="false">[</mo><mi>l</mi><mo>+</mo><mn>2</mn><mo stretchy="false">]</mo></mrow></msup><mo>+</mo><msup><mi>a</mi><mrow><mo stretchy="false">[</mo><mi>l</mi><mo stretchy="false">]</mo></mrow></msup><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">g(z^{[l+2]} + a^{[l]}) </annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.138em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.03588em;">g</span><span class="mopen">(</span><span class="mord"><span class="mord mathdefault" style="margin-right:0.04398em;">z</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8879999999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mopen mtight">[</span><span class="mord mathdefault mtight" style="margin-right:0.01968em;">l</span><span class="mbin mtight">+</span><span class="mord mtight">2</span><span class="mclose mtight">]</span></span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1.138em;vertical-align:-0.25em;"></span><span class="mord"><span class="mord mathdefault">a</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8879999999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mopen mtight">[</span><span class="mord mathdefault mtight" style="margin-right:0.01968em;">l</span><span class="mclose mtight">]</span></span></span></span></span></span></span></span></span><span class="mclose">)</span></span></span></span></span><span>﻿</span></span> and if using weight decay this will mean that <style>@import url('https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.11.1/katex.min.css')</style><span data-token-index="0" contenteditable="false" class="notion-text-equation-token" style="user-select:all;-webkit-user-select:all;-moz-user-select:all"><span></span><span><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>z</mi><mrow><mo stretchy="false">[</mo><mi>l</mi><mo>+</mo><mn>2</mn><mo stretchy="false">]</mo></mrow></msup><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">z^{[l+2]} = 0</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8879999999999999em;vertical-align:0em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.04398em;">z</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8879999999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mopen mtight">[</span><span class="mord mathdefault mtight" style="margin-right:0.01968em;">l</span><span class="mbin mtight">+</span><span class="mord mtight">2</span><span class="mclose mtight">]</span></span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">0</span></span></span></span></span><span>﻿</span></span> then <style>@import url('https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.11.1/katex.min.css')</style><span data-token-index="0" contenteditable="false" class="notion-text-equation-token" style="user-select:all;-webkit-user-select:all;-moz-user-select:all"><span></span><span><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>a</mi><mrow><mo stretchy="false">[</mo><mi>l</mi><mo>+</mo><mn>2</mn><mo stretchy="false">]</mo></mrow></msup><mo>=</mo><mi>g</mi><mo stretchy="false">(</mo><msup><mi>a</mi><mrow><mo stretchy="false">[</mo><mi>l</mi><mo stretchy="false">]</mo></mrow></msup><mo stretchy="false">)</mo><mo>=</mo><msup><mi>a</mi><mrow><mo stretchy="false">[</mo><mi>l</mi><mo stretchy="false">]</mo></mrow></msup></mrow><annotation encoding="application/x-tex">a^{[l+2]} = g(a^{[l]}) = a^{[l]}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8879999999999999em;vertical-align:0em;"></span><span class="mord"><span class="mord mathdefault">a</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8879999999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mopen mtight">[</span><span class="mord mathdefault mtight" style="margin-right:0.01968em;">l</span><span class="mbin mtight">+</span><span class="mord mtight">2</span><span class="mclose mtight">]</span></span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1.138em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.03588em;">g</span><span class="mopen">(</span><span class="mord"><span class="mord mathdefault">a</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8879999999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mopen mtight">[</span><span class="mord mathdefault mtight" style="margin-right:0.01968em;">l</span><span class="mclose mtight">]</span></span></span></span></span></span></span></span></span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.8879999999999999em;vertical-align:0em;"></span><span class="mord"><span class="mord mathdefault">a</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8879999999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mopen mtight">[</span><span class="mord mathdefault mtight" style="margin-right:0.01968em;">l</span><span class="mclose mtight">]</span></span></span></span></span></span></span></span></span></span></span></span></span><span>﻿</span></span>.</p><p id="c18da338-9066-4f68-913d-093975cf9eda" class="">
+</p><p id="96beead7-06a3-40bc-bc2f-dc6faf977533" class="">This shows that the identify function is easy for the residual block to learn. This is why adding a residual block into our network does not hurt the perfomance, and gradient descent can thus increase perfomance (might).</p><p id="7d371249-d902-4bb8-bb23-676067ceaadf" class="">
+</p><p id="1d235db2-44e2-4ee0-8233-8a3ea2b21f73" class=""><strong>How ResNet work on images</strong></p><p id="b0e9df76-a18c-43d9-80ad-62f6f7054f99" class="">This image shows an example of a plain network which takes in an input image and then have a number of conv-layers until eventually a softmax on the output. </p><figure id="28ba794d-76c5-493d-b91c-c9a912502fb2" class="image"><a href="Week%202%207776fb9d482c4769bf651e5daecc04ca/Untitled%206.png"><img style="width:778px" src="Week%202%207776fb9d482c4769bf651e5daecc04ca/Untitled%206.png"/></a></figure><p id="4e0fb0a9-f491-4dcd-bc59-9b0461122354" class="">In order to turn this network into a ResNet we would need to skip connections. Note that theres a number of similar 3x3 convolutions and most of them have 3x3 convolutions so the dimensions are preserved and there&#x27;s occasional pooling layers and the end you have fully connected layer which then makes a prediction using a softmax.</p><h2 id="c9168c28-c7bb-4313-abdf-ba674132db91" class="">Networks in Networks and 1x1 Convolutions</h2><p id="96d10141-1c53-42fe-935d-281442978caf" class="">In terms of designing convnet architectures, one of the ideas that really helps is using a one by one convolution. Now, you might be wondering, what does a one by one convolution do? Isn&#x27;t that just multiplying by numbers? That seems like a funny thing to do. Turns out it&#x27;s not quite like that. </p><figure id="afcb7b72-5baa-4b39-9f34-2be2f5e0c6cf" class="image"><a href="Week%202%207776fb9d482c4769bf651e5daecc04ca/Untitled%207.png"><img style="width:781px" src="Week%202%207776fb9d482c4769bf651e5daecc04ca/Untitled%207.png"/></a></figure><p id="7e771312-3c1c-4ff8-9e41-9daef79cd0f5" class="">Consider a 1x1 filter with a value of 2 and convolve it with an input image the product will just be doubled values of the input image which doesn&#x27;t really seem particulary useful. However, if you have a input with more channels and convolve it with a 1 x 1 x n_C filter then the output will thus contain n_C number of filters.</p><p id="741483a5-6674-4213-9c50-b060b9b8ffc9" class="">One way of thinking about the n_C numbers you have in the filter is that, it&#x27;s as if you have a neuron that is taking an input number and multiplying each of the numbers in one slice of the same position height and width of the numbers in one slice of the same position n_H and n_W by these different channels then multiplying them by weights and then applying ReLU non-linearity to it before the output.</p><p id="17a8c813-9de1-454d-a788-acc187022fea" class="">
+</p><p id="e12e530e-60a2-400e-9089-43f4d7b57c9a" class=""><strong>Usage</strong></p><figure id="90cf1426-c365-4242-93c3-c4800313f3ad" class="image"><a href="Week%202%207776fb9d482c4769bf651e5daecc04ca/Untitled%208.png"><img style="width:773px" src="Week%202%207776fb9d482c4769bf651e5daecc04ca/Untitled%208.png"/></a></figure><p id="a8d15cde-8057-471b-997d-29fa0d841fa7" class="">Suppose have an input and you want to shrink only the n_C and not the n_H and n_W of which n_H and n_W can be shruken using a pooling layer.</p><p id="fdeff9c2-f423-4456-afba-6afe8e493cad" class="">You could use a 32 1x1 filters with the same n_C as the input this would output n_H, n_W, n_C= # of filters.</p><p id="dc593d39-34dc-4e21-8afa-ac2dd990190a" class="">
+</p><p id="623c79dc-2428-4618-bf52-c5029e103e4c" class="">This 1x1 convnet allows you to shrink or increas the number of channels in your volume which is useful to the inception network.</p><h2 id="2876240e-8edb-4f76-a606-0ab5ea25f9cd" class="">Inception Network Motivation</h2><figure id="44c794b4-c597-4446-8785-013e4c52d2a5" class="image"><a href="Week%202%207776fb9d482c4769bf651e5daecc04ca/Untitled%209.png"><img style="width:780px" src="Week%202%207776fb9d482c4769bf651e5daecc04ca/Untitled%209.png"/></a></figure><p id="0f6fcfdd-e560-49d8-b04b-8b4fa7229b6c" class="">Suppose we have an input of 28x28x192 dimensional volume, what the inception network or inception layer does is instead of choosing what filter size you want in your Conv layer or if you want a Conv or pooling layer - let&#x27;s do them all.</p><p id="19f1be6d-b28d-487e-b0bf-8ba8ec97169f" class="">With the inception module you can input some volume and output then add yo all those number (32+32+128+64 = 256). So you will have one inception module input 28x28x192 outputting a 28x28x256 volume.</p><h2 id="b6048963-a773-4aa9-bbf0-7f884c124cbd" class="">Inception Network/GoogleNet</h2><figure id="fb15c6d6-9e68-4061-8650-57c653ea619f" class="image"><a href="Week%202%207776fb9d482c4769bf651e5daecc04ca/Untitled%2010.png"><img style="width:784px" src="Week%202%207776fb9d482c4769bf651e5daecc04ca/Untitled%2010.png"/></a></figure><p id="d269d9b8-83ac-4e88-b0cc-bd78daeb3a96" class="">The inception module takes as input the activation or the output from some previous layer. In our case this is a 28x28x192 which goes through a 1x1x16 conv then 5x5 conv then the output will be 28x28x32. The do the same for the 1x1x96 and 3x3 convolution, the output will be 28x28x128. The consider a 1x1 convolution which will output 28x28x64</p><p id="d7c198c6-f0de-40ac-8591-f54acb8f189f" class="">In order to really concatenate all of these outputs at the end we use the same type of padding for pooling. So that the output height and width stays as 28x28. But notice that if you do max-pooling, even with same padding, 3x3 filter is tried at 1. The output here will be 28x28x192. It will have the same number of channels and the same depth as the input that we had here. This seems like is has a lot of channels. So what we&#x27;re going to do is actually add one more 1x1 conv layer to strengthen the number of channels. So it gets us down to 28x28x32. And the way you do that, is to use 32 filters, of dimension 1x1x192. So that&#x27;s why the output dimension has a number of channels shrunk down to 32. So then we don&#x27;t end up with the pulling layer taking up all the channels in the final output.</p><p id="5dc6cb1f-066a-4c20-8119-3f2eaf56d730" class="">
+</p><p id="45fa1294-b98f-4121-a85e-08ed5ad86ae9" class="">Finally you take all of these blocks and you do channel concatenation. Just concatenate across this 64x128x32x32 and this if you add it up this gives you a 28x28x256 dimension output. </p><p id="04c80416-4333-4432-8884-bf696142026d" class="">
+</p><figure id="6940f807-7f10-42d2-bc49-44408adf42e7" class="image"><a href="Week%202%207776fb9d482c4769bf651e5daecc04ca/Untitled%2011.png"><img style="width:777px" src="Week%202%207776fb9d482c4769bf651e5daecc04ca/Untitled%2011.png"/></a></figure><p id="1819092a-bd49-47dd-a0f1-54d322fabfe2" class="">if you understand the inception module, then you understand the inception network. Which is largely the inception module repeated a bunch of times throughout the network. Since the development of the original inception module, the author and others have built on it and come up with other versions as well. So there are research papers on newer versions of the inception algorithm.</p><h1 id="bb1304c3-9885-4b7d-aa03-4294af7faf9f" class="">Practical advices for using ConvNets</h1><h2 id="28806d81-cec6-4c97-a85c-3d4bbb6908a0" class="">Transfer Learning</h2><p id="c30a509a-b452-4dde-aa7d-a3bf34d05f62" class="">Suppose you are building a computer vision application instead of training your algorithm from scratch (random initialization), you would often progress faster if you leverage the use of already trained network architectures by using that as pre-training and transfer that to a new task that you might be interested in. </p><p id="ef67d2cb-515c-466b-a149-4b8df0f6ef6c" class="">The computer vision research community has vast number of open source data sets such as ImageNet, or MS COCO, or Pascal types of data sets, these are the names of different data sets that people have post online and a lot of computer researchers have trained their algorithms on. Sometimes these training takes several weeks and might take many GPU and the fact that someone else has done this and gone through the painful high-performance search process, means that you can often download open source ways that took someone else many weeks or months to figure out and use that as a very good initialization for your own neural network. And use transfer learning to sort of transfer knowledge from some of these very large public data sets to your own problem.</p><p id="84e8384b-473a-444f-93d1-0cf646b6daee" class="">
+</p><figure id="f18cb456-1cff-4996-90a0-522dedee0ad4" class="image"><a href="Week%202%207776fb9d482c4769bf651e5daecc04ca/Untitled%2012.png"><img style="width:782px" src="Week%202%207776fb9d482c4769bf651e5daecc04ca/Untitled%2012.png"/></a></figure><p id="2bb3c663-a367-40b1-8646-e1ce5fa6a9f7" class="">Suppose you want to create a cat classifier application using transfer learning, there are 3 options in order to achieve that, you would need to initially download an already pre-trained model (that was trained on multiple classes) and;</p><ol id="9deb7714-7d35-486f-95b2-8f1d4edbd2ce" class="numbered-list" start="1"><li>Freeze the parameters on all layers and only train the parameters associated with your output softmax layer, which will be your classification layer. <ul id="37b78d4e-4d18-4904-86e8-b2883558004b" class="bulleted-list"><li>This assumes you have a small dataset.</li></ul></li></ol><ol id="8ec6439f-30c1-4176-af8f-144456251cfd" class="numbered-list" start="2"><li>Freeze fewer layers and only train the last few layers (1. You could take the last few layers and use that as initialization then do gradient descent, or 2. Remove last few layers and use your own new hidden layers then a final softmax classifier).<ul id="20519be3-e3b5-434c-85a4-edcf0051352a" class="bulleted-list"><li>This assumes you have a large dataset</li></ul></li></ol><ol id="8092ab38-01f3-4583-b475-9e28961d54a7" class="numbered-list" start="3"><li>Unfreeze and train the whole network and only replace the softmax output classifier, which might take a long time depending on your computational resources.<ul id="9972a18a-0901-41ec-b4e8-e3866c5dedfe" class="bulleted-list"><li>This assumes you have a very large dataset</li></ul></li></ol><p id="c2e8b02a-bede-4fde-b9b8-a152a4210a9e" class="">In practice, when working with transfer learning most researchers opt for option 1 or 2 as it doesn&#x27;t require a lot of computational resources and already the heavy lifting has been done for them.</p><h2 id="3009a2b0-2582-4789-910a-7364b85f74cb" class="">Data Augmentation</h2><p id="5b1814e3-4f29-4073-b31d-e8ac346f0fbc" class="">Often, when you&#x27;re training computer vision models, data augmentation helps especially when you have a small dataset.</p><p id="ea91807c-c6b2-4769-a438-9e5a5a2357fc" class="">According to <a href="https://developers.google.com/machine-learning/glossary#data-augmentation">https://developers.google.com/machine-learning/glossary#data-augmentation</a>, It can be defined as artificially boosting the range and number of training examples by transforming existing examples to create additional examples. </p><p id="92a42085-3c81-4f83-b95b-81f00e92836d" class="">For example, suppose images are one of your features, but your dataset doesn&#x27;t contain enough image examples for the model to learn useful associations. Ideally, you&#x27;d add enough labeled images to your dataset to enable your model to train properly. If that&#x27;s not possible, data augmentation can rotate, stretch, and reflect each image to produce many variants of the original picture, possibly yielding enough labeled data to enable excellent training.</p><p id="12f4cdee-af1a-431f-ab17-7a18b84bea66" class="">
+</p><p id="2d1a0074-b914-4788-9941-e4e685db4fd0" class=""><strong>Common data augmentation methods used in computer vision.</strong></p><figure id="e1ea645c-3fa2-445b-add6-fe549d9f8479" class="image"><a href="Week%202%207776fb9d482c4769bf651e5daecc04ca/Untitled%2013.png"><img style="width:783px" src="Week%202%207776fb9d482c4769bf651e5daecc04ca/Untitled%2013.png"/></a></figure><p id="130514ef-0a45-4f91-b9f9-35c29e290bdd" class=""><strong>Another advanced method used is color shifting.</strong></p><figure id="c035905d-f6fb-4c2c-b088-c34e902e450e" class="image"><a href="Week%202%207776fb9d482c4769bf651e5daecc04ca/Untitled%2014.png"><img style="width:782px" src="Week%202%207776fb9d482c4769bf651e5daecc04ca/Untitled%2014.png"/></a></figure><p id="ed7a7a9f-c040-4130-bcd1-ee8a1543b927" class=""><strong>How is data augmentation implemented during training</strong></p><figure id="1acb54de-6439-438d-b04c-a8b3d4d847a2" class="image"><a href="Week%202%207776fb9d482c4769bf651e5daecc04ca/Untitled%2015.png"><img style="width:781px" src="Week%202%207776fb9d482c4769bf651e5daecc04ca/Untitled%2015.png"/></a></figure><p id="4e975541-0bce-4e6a-b10c-ff782ca8b6b3" class="">Suppose you have some data input, you would need to add a function that would distort (note this is parameterised) your images before training, ideally on a separate thread.</p><h2 id="1a40a60f-6e35-4b01-b10c-7836d52342df" class="">State of Computer Vision</h2><p id="176480b4-55d0-4d41-a696-f268f5907c41" class=""><strong>Tips for doing well on benchmarks/winning competitions</strong></p><figure id="5d0a58a4-9f79-44b4-9f86-9822c4c88301" class="image"><a href="Week%202%207776fb9d482c4769bf651e5daecc04ca/Untitled%2016.png"><img style="width:779px" src="Week%202%207776fb9d482c4769bf651e5daecc04ca/Untitled%2016.png"/></a></figure><p id="7a75f0ac-5a34-4066-aa38-77af205b3c84" class=""><strong>Use open source code</strong></p><ul id="1935f54b-f16e-4679-b4b3-e966d4a3cf2c" class="bulleted-list"><li>Use architectures of networks published in the literature.</li></ul><ul id="572c1226-97b5-4df7-8453-0422f6f82ac1" class="bulleted-list"><li>Use open-source implementations if possible.</li></ul><ul id="b3d87dc9-7ada-4763-b350-436d71faa2ad" class="bulleted-list"><li>Use pretrained models and fine-tune on your dataset.</li></ul><hr id="1f1f3fca-7f37-4bf6-aebd-8ba0e97e7bc4"/><h1 id="576dc5e1-e887-481a-a05b-9c64301584e7" class="">Q &amp; A</h1><h2 id="19ca937e-b45a-4b1a-9a53-8e1c3dcb9195" class="">Deep convolutional models</h2><ol id="2b0a976b-d4e2-4770-bdd7-83cb9df367fa" class="numbered-list" start="1"><li>Which of the following do you typically see as you move to deeper layers in a ConvNet?<ul id="15e3e476-bbfc-4487-931d-18a908fd4c1f" class="bulleted-list"><li>nH and nW decrease, while nC increases</li></ul></li></ol><ol id="45ce8317-990e-4520-98d0-636089717a80" class="numbered-list" start="2"><li>Which of the following do you typically see in a ConvNet? (Check all that apply.)<ul id="7a77b49e-e516-4a23-b5c1-2765deb099f8" class="bulleted-list"><li>Multiple CONV layers followed by a POOL layer</li></ul><ul id="bbbe680b-b62b-42e1-a822-ceed266d83b9" class="bulleted-list"><li>FC layers in the last few layers</li></ul></li></ol><ol id="a9c6c534-211c-4302-b3ce-dca1c3f47181" class="numbered-list" start="3"><li> In order to be able to build very deep networks, we usually only use pooling layers to downsize the height/width of the activation volumes while convolutions are used with “valid” padding. Otherwise, we would downsize the input of the model too quickly.<ul id="0128006d-4e85-4994-82c9-d1147f751a61" class="bulleted-list"><li>False</li></ul></li></ol><ol id="1dd97c37-65dd-4ac6-82f6-555bd278299b" class="numbered-list" start="4"><li>Training a deeper network (for example, adding additional layers to the network) allows the network to fit more complex functions and thus almost always results in lower training error. For this question, assume we’re referring to “plain” networks.<ul id="4a991781-15c1-40ba-bd54-372ecf2131a9" class="bulleted-list"><li>False</li></ul></li></ol><ol id="3d8cc341-a33e-4770-84ba-62aea66b129d" class="numbered-list" start="5"><li>The following equation captures the computation in a ResNet block. What goes into the two blanks above? <p id="d62320de-471b-47ce-b723-883406222f76" class=""><style>@import url('https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.11.1/katex.min.css')</style><span data-token-index="0" contenteditable="false" class="notion-text-equation-token" style="user-select:all;-webkit-user-select:all;-moz-user-select:all"><span></span><span><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>a</mi><mrow><mo stretchy="false">[</mo><mi>l</mi><mo>+</mo><mn>2</mn><mo stretchy="false">]</mo></mrow></msup><mo>=</mo><mi>g</mi><mo stretchy="false">(</mo><msup><mi>W</mi><mrow><mo stretchy="false">[</mo><mi>l</mi><mo>+</mo><mn>2</mn><mo stretchy="false">]</mo></mrow></msup><mi>g</mi><mo stretchy="false">(</mo><msup><mi>W</mi><mrow><mo stretchy="false">[</mo><mi>l</mi><mo>+</mo><mn>1</mn><mo stretchy="false">]</mo></mrow></msup><msup><mi>a</mi><mrow><mo stretchy="false">[</mo><mi>l</mi><mo stretchy="false">]</mo></mrow></msup><mo>+</mo><msup><mi>b</mi><mrow><mo stretchy="false">[</mo><mi>l</mi><mo>+</mo><mn>1</mn><mo stretchy="false">]</mo></mrow></msup><mo stretchy="false">)</mo><mo>+</mo><msup><mi>b</mi><mrow><mo stretchy="false">[</mo><mi>l</mi><mo>+</mo><mn>2</mn><mo stretchy="false">]</mo></mrow></msup><mo>+</mo><mo stretchy="false">?</mo><mo stretchy="false">)</mo><mo>+</mo><mo stretchy="false">?</mo></mrow><annotation encoding="application/x-tex">a^{[l+2]}=g(W^{[l+2]}g(W^{[l+1]}a^{[l]}+b^{[l+1]})+b^{[l+2]}+ ?) + ?</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8879999999999999em;vertical-align:0em;"></span><span class="mord"><span class="mord mathdefault">a</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8879999999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mopen mtight">[</span><span class="mord mathdefault mtight" style="margin-right:0.01968em;">l</span><span class="mbin mtight">+</span><span class="mord mtight">2</span><span class="mclose mtight">]</span></span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1.138em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.03588em;">g</span><span class="mopen">(</span><span class="mord"><span class="mord mathdefault" style="margin-right:0.13889em;">W</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8879999999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mopen mtight">[</span><span class="mord mathdefault mtight" style="margin-right:0.01968em;">l</span><span class="mbin mtight">+</span><span class="mord mtight">2</span><span class="mclose mtight">]</span></span></span></span></span></span></span></span></span><span class="mord mathdefault" style="margin-right:0.03588em;">g</span><span class="mopen">(</span><span class="mord"><span class="mord mathdefault" style="margin-right:0.13889em;">W</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8879999999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mopen mtight">[</span><span class="mord mathdefault mtight" style="margin-right:0.01968em;">l</span><span class="mbin mtight">+</span><span class="mord mtight">1</span><span class="mclose mtight">]</span></span></span></span></span></span></span></span></span><span class="mord"><span class="mord mathdefault">a</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8879999999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mopen mtight">[</span><span class="mord mathdefault mtight" style="margin-right:0.01968em;">l</span><span class="mclose mtight">]</span></span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1.138em;vertical-align:-0.25em;"></span><span class="mord"><span class="mord mathdefault">b</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8879999999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mopen mtight">[</span><span class="mord mathdefault mtight" style="margin-right:0.01968em;">l</span><span class="mbin mtight">+</span><span class="mord mtight">1</span><span class="mclose mtight">]</span></span></span></span></span></span></span></span></span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1.138em;vertical-align:-0.25em;"></span><span class="mord"><span class="mord mathdefault">b</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8879999999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mopen mtight">[</span><span class="mord mathdefault mtight" style="margin-right:0.01968em;">l</span><span class="mbin mtight">+</span><span class="mord mtight">2</span><span class="mclose mtight">]</span></span></span></span></span></span></span></span></span><span class="mord">+</span><span class="mclose">?</span><span class="mclose">)</span><span class="mord">+</span><span class="mclose">?</span></span></span></span></span><span>﻿</span></span></p><ul id="a56de38f-066e-4a4f-bfdb-2eb5ee7a15fe" class="bulleted-list"><li>a[l] and 0, respectively</li></ul></li></ol><ol id="53ce5793-1853-4b83-a7f9-b713a86d05d2" class="numbered-list" start="6"><li>Which ones of the following statements on Residual Networks are true? (Check all that apply.)<ul id="6e23d8db-c01b-4ee6-94bf-92996008e660" class="bulleted-list"><li>Using a skip-connection helps the gradient to backpropagate and thus helps you to train deeper networks</li></ul><ul id="33e43844-0832-4d54-8a2c-e55b44f6749d" class="bulleted-list"><li>The skip-connections compute a complex non-linear function of the input to pass to a deeper layer in the network.</li></ul></li></ol><ol id="0241146e-0a18-4ad7-90df-151f425efbf1" class="numbered-list" start="7"><li>Suppose you have an input volume of dimension 64x64x16. How many parameters would a single 1x1 convolutional filter have (including the bias)?<ul id="3c261702-b461-4152-95af-55e5eda6bb1a" class="bulleted-list"><li>17</li></ul></li></ol><ol id="7b132102-9a3d-429e-80d3-fcb383f7ac96" class="numbered-list" start="8"><li>Suppose you have an input volume of dimension nH x nW x nC. Which of the following statements you agree with? (Assume that “1x1 convolutional layer” below always uses a stride of 1 and no padding.)<ul id="86b731aa-59a8-46fa-9843-4512af6788c5" class="bulleted-list"><li>You can use a 1x1 convolutional layer to reduce nC but not nH, nW.</li></ul><ul id="bc2b7fbb-5984-41fe-8b64-fd49a07e363f" class="bulleted-list"><li>You can use a pooling layer to reduce nH, nW, and nC.</li></ul></li></ol><ol id="951c3642-3ac1-4dbe-b48f-0e8d9e082590" class="numbered-list" start="9"><li>Which ones of the following statements on Inception Networks are true? (Check all that apply.)<ul id="9bd2ccd5-ad62-428d-8ee1-b6a2663c9be4" class="bulleted-list"><li>A single inception block allows the network to use a combination of 1x1, 3x3, 5x5 convolutions and pooling.</li></ul><ul id="086b22ca-53f7-4bf2-be23-cb5e3a591aae" class="bulleted-list"><li>Inception blocks usually use 1x1 convolutions to reduce the input data volume’s size before applying 3x3 and 5x5 convolutions.</li></ul></li></ol><ol id="5c7ebffd-64e6-4867-8feb-76d23a411a95" class="numbered-list" start="10"><li>Which of the following are common reasons for using open-source implementations of ConvNets (both the model and/or weights)? Check all that apply.<ul id="1f46a0dc-2af9-4e58-9bf0-d9ef1d2f3cc3" class="bulleted-list"><li>It is a convenient way to get working an implementation of a complex ConvNet architecture.</li></ul><ul id="98d57bc6-e4bd-4561-8767-0dba396e2eaa" class="bulleted-list"><li>Parameters trained for one computer vision task are often useful as pretraining for other computer vision tasks.</li></ul></li></ol></div></article></body></html>
