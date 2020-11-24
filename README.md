@@ -86,7 +86,7 @@ This is the third course in the Deep Learning Specialization.
 
 ---
 
-- [My Notes](https://refined-github-html-preview.kidonng.workers.dev/mmphego/DeepLearning-AI/raw/master/Course%203%20Structuring%20Machine%20Learning%20Projects/Course%203%20Structuring%20Machine%20Learning%20Projects.html)
+- [My Notes](https://refined-github-html-preview.kidonng.workers.dev/mmphego/DeepLearning-AI/raw/master/Course%203%20Structuring%20Machine%20Learning%20Projects/notes/Course%203%20Structuring%20Machine%20Learning%20Projects.html)
 ---
 
 ### Syllabus - What I've learned from this course
@@ -108,6 +108,20 @@ You will:
 
 This is the fourth course of the Deep Learning Specialization.
 
+---
+
+- [My Notes](https://refined-github-html-preview.kidonng.workers.dev/mmphego/DeepLearning-AI/raw/master/Course%204%20-%20Convolutional%20Neural%20Networks/notes/Course%204%20Convolutional%20Neural%20Networks%203a28192b5c4b43b3ae875578cf64117a.html)
+- [Programming Assignments](https://github.com/mmphego/DeepLearning-AI/tree/master/Course%204%20-%20Convolutional%20Neural%20Networks/workspace)
+
+---
+
+### Syllabus - What I've learned from this course
+
+- [x] Week 1: Implemented foundational layers of CNNs (pooling, convolutions) and stacked them properly in a deep network to solve multi-class image classification problems.
+- [x] Week 2: Learned about the practical tricks and methods used in deep CNNs straight from the research papers.
+- [x] Week 3: Learned how to apply my knowledge of CNNs to one of the toughest but hottest field of computer vision: Object detection.
+- [x] Week 4: Discovered how CNNs can be applied to multiple fields, including art generation and face recognition. Implemented my own algorithm to generate art and recognize faces!
+
 ## Course 5: Sequence Models
 
 This course will teach you how to build models for natural language, audio, and other sequence data. Thanks to deep learning, sequence algorithms are working far better than just two years ago, and this is enabling numerous exciting applications in speech recognition, music synthesis, chatbots, machine translation, natural language understanding, and many others.
@@ -121,6 +135,19 @@ You will:
 This is the fifth and final course of the Deep Learning Specialization.
 deeplearning.ai is also partnering with the NVIDIA Deep Learning Institute (DLI) in Course 5, Sequence Models, to provide a programming assignment on Machine Translation with deep learning. You will have the opportunity to build a deep learning project with cutting-edge, industry-relevant content.
 
+---
+
+- [My Notes]()
+---
+
+### Syllabus - What I've learned from this course
+
+- [x] Week 1
+- [x] Week 2
+- [x] Week 3
+- [x] Week 4
+
+---
 
 # Useful Resources
 
