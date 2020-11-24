@@ -95,7 +95,7 @@ This is the third course in the Deep Learning Specialization.
 - [x] Week 2: Understand complex ML settings, data mismatch and leveraging pretrained systems.
 
 
-## Course 4: Convolutional Neural Networks
+## Course 4: Convolutional Neural Networks [Completed]
 
 This course will teach you how to build convolutional neural networks and apply them to image data. Thanks to deep learning, computer vision is working far better than just two years ago, and this is enabling numerous exciting applications ranging from safe autonomous driving to accurate face recognition, to automatic reading of radiology images.
 
